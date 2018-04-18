@@ -4,6 +4,7 @@ import flexbugs from 'postcss-flexbugs-fixes';
 import HtmlWebPackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 export default () => ({
   entry: {
@@ -65,17 +66,6 @@ export default () => ({
           },
         ],
       },
-      {
-        test: /\.(svg|png|jpe?g|gif|bmp)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'static/[name].[ext]',
-            },
-          },
-        ],
-      },
     ],
   },
   resolve: {
@@ -83,6 +73,9 @@ export default () => ({
   },
   plugins: [
     new CleanWebpackPlugin('./dist'),
+    new CopyWebpackPlugin([{
+      from: 'src/static',
+    }]),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',
@@ -94,5 +87,6 @@ export default () => ({
   ],
   devServer: {
     historyApiFallback: true,
+    contentBase: path.join(__dirname, 'src/static'),
   },
 });
