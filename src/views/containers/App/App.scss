@@ -1,0 +1,19 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/breakpoints.scss';
+
+.root {
+  @include box-shadow();
+
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  text-align: center;
+  background: $white;
+
+  @media (max-width: $xs) {
+    width: 90%;
+    height: auto;
+    margin: 5%;
+  }
+}

@@ -1,0 +1,11 @@
+@import '../../styles/breakpoints.scss';
+
+.duck {
+  display: block;
+  margin-top: 100px;
+  font-size: 100px;
+
+  @media (max-width: $xs) {
+    margin-top: 20px;
+  }
+}

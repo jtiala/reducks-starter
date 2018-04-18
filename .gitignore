@@ -1,0 +1,39 @@
+# Build directory
+dist
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Yarn integrity file
+.yarn-integrity
+
+# Tests
+coverage
+.nyc_output
+
+# Dotenv configuration
+.env
+
+# macOS system files
+._DS_Store
+._.DS_Store
+
+# IntelliJ IDE
+.idea
+
+# Visual Studio Code
+.vscode
+
+# Vim swp files
+*.swp

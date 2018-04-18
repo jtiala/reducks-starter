@@ -1,0 +1,4 @@
+{
+  "extends": "stylelint-config-recess-order",
+  "syntax": "scss"
+}

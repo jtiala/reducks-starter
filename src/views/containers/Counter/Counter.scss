@@ -1,0 +1,14 @@
+@import '../../styles/colors.scss';
+
+.number {
+  padding: 8px 20px;
+  background: $secondary;
+}
+
+.negative {
+  background: $danger;
+}
+
+.positive {
+  background: $success;
+}

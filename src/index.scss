@@ -1,0 +1,23 @@
+@import '../node_modules/modern-normalize/modern-normalize.css';
+@import './views/styles/colors.scss';
+@import './views/styles/breakpoints.scss';
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background-image: linear-gradient(120deg, $primary 0%, $secondary 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  @media (max-width: $xs) {
+    display: initial;
+  }
+}
