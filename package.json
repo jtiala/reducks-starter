@@ -13,7 +13,7 @@
     "ducks",
     "reducks",
     "react-router",
-    "immutable"
+    "immutablejs"
   ],
   "license": "MIT",
   "private": false,

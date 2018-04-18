@@ -1,7 +1,7 @@
-import stateRecord from './records';
+import StateRecord from './records';
 import * as types from './types';
 
-const initialState = stateRecord();
+const initialState = StateRecord();
 
 export default (state = initialState, action) => {
   switch (action.type) {
