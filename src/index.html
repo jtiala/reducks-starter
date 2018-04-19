@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="manifest" href="./manifest.json">
     <link rel="shortcut icon" href="/icons/favicon.ico">
+    <meta name="theme-color" content="#84fab0">
+    <script>
+      if ('serviceWorker' in window.navigator) {
+        window.addEventListener('load', () => window.navigator.serviceWorker.register('/sw.js'));
+      }
+    </script>
   </head>
   <body>
     <noscript>
