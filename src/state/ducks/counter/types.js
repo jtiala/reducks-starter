@@ -1,5 +1,5 @@
-const name = 'counter';
+const duck = 'counter';
 
-export const DECREMENT = `${name}/DECREMENT`;
-export const INCREMENT = `${name}/INCREMENT`;
-export const RESET = `${name}/RESET`;
+export const DECREMENT = `${duck}/DECREMENT`;
+export const INCREMENT = `${duck}/INCREMENT`;
+export const RESET = `${duck}/RESET`;
