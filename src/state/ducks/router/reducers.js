@@ -1,8 +1,8 @@
 import { LOCATION_CHANGE } from 'react-router-redux';
 import { fromJS } from 'immutable';
-import StateRecord from './records';
+import { Router } from './records';
 
-const initialState = StateRecord();
+export const initialState = Router();
 
 export default (state = initialState, action = {}) => {
   if (action.type === LOCATION_CHANGE) {

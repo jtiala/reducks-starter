@@ -1,5 +1,6 @@
 import { Record } from 'immutable';
 
-export default Record({
+// eslint-disable-next-line import/prefer-default-export
+export const Counter = Record({
   count: 0,
 });
