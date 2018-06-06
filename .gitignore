@@ -26,7 +26,7 @@ coverage
 .env
 
 # macOS system files
-._DS_Store
+.DS_Store
 ._.DS_Store
 
 # IntelliJ IDE
