@@ -25,10 +25,12 @@
     "build": "webpack --mode production",
     "start": "webpack-dev-server --watch --watch-content-base --hot --mode development",
     "test": "echo \"No unit tests and e2e tests yet\" && exit 1",
-    "lint": "eslint src",
-    "lint:fix": "eslint src --fix",
-    "lint:style": "stylelint src",
-    "lint:style:fix": "stylelint src --fix"
+    "lint": "eslint src && stylelint src",
+    "lint:fix": "eslint src --fix && stylelint src --fix",
+    "lint:js": "eslint src",
+    "lint:js:fix": "eslint src --fix",
+    "lint:styles": "stylelint src",
+    "lint:styles:fix": "stylelint src --fix"
   },
   "dependencies": {
     "classnames": "^2.2.5",
