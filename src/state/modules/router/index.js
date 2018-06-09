@@ -1,10 +1,14 @@
 import { LOCATION_CHANGE } from 'react-router-redux';
 import { Record, fromJS } from 'immutable';
 
-// Record
-export const Router = Record({
+// Records
+const Router = Record({
   location: null,
 });
+
+export const records = {
+  Router,
+};
 
 // Reducer
 export const initialState = Router();
