@@ -1,6 +1,7 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { Counter } from './Counter';
+import Button from '../../components/Button';
 
 describe('<Counter />', () => {
   const props = {
@@ -22,5 +23,16 @@ describe('<Counter />', () => {
     const wrapper = shallow(<Counter {...props} />);
 
     expect(wrapper.find('.number').text()).toBe(String(props.count));
+  });
+
+  it('calls onClick handlers', () => {
+    const wrapper = mount(<Counter {...props} />);
+    const buttons = wrapper.find(Button);
+
+    buttons.at(0).simulate('click');
+    expect(props.decrement.mock.calls.length).toEqual(1);
+
+    buttons.at(1).simulate('click');
+    expect(props.increment.mock.calls.length).toEqual(1);
   });
 });
