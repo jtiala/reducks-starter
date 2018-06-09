@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import {
   selectors as counterSelectors,
   operations as counterOperations,
-} from '../../../state/ducks/counter';
+} from '../../../state/modules/counter';
 import Button from '../../components/Button';
 import styles from './Counter.scss';
 
