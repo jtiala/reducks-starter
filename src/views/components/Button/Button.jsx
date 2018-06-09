@@ -12,16 +12,16 @@ const Button = props => (
 );
 
 Button.propTypes = {
-  onClick: PropTypes.func,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]),
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
-  onClick: undefined,
   children: undefined,
+  onClick: undefined,
 };
 
 export default Button;
