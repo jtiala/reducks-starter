@@ -1,6 +1,6 @@
 import { Record } from 'immutable';
-import counter from './counter';
-import router from './router';
+import counter, { records as counterRecords } from './counter';
+import router, { records as routerRecords } from './router';
 
 export const reducers = {
   counter,
@@ -8,6 +8,6 @@ export const reducers = {
 };
 
 export const StoreRecord = Record({
-  counter: undefined,
-  router: undefined,
+  counter: counterRecords.Counter(),
+  router: routerRecords.Router(),
 });
