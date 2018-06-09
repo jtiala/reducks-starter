@@ -9,7 +9,7 @@ import {
 import Button from '../../components/Button';
 import styles from './Counter.scss';
 
-const Counter = (props) => {
+export const Counter = (props) => {
   const counterStyles = classNames(styles.number, {
     [styles.positive]: props.isPositive,
     [styles.negative]: props.isNegative,

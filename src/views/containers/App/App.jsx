@@ -5,7 +5,7 @@ import Home from '../../containers/Home';
 import Counter from '../../containers/Counter';
 import styles from './App.scss';
 
-const App = () => (
+export const App = () => (
   <div className={styles.root}>
     <Header />
     <main>
