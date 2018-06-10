@@ -15,6 +15,12 @@ export const Repository = Record({
   owner: Owner(),
 });
 
+export const Status = Record({
+  fetching: false,
+  error: undefined,
+});
+
 export const Repositories = Record({
   data: OrderedSet(),
+  status: Status(),
 });
