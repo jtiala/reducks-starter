@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Header from '../../components/Header';
 import Home from '../../containers/Home';
 import Counter from '../../containers/Counter';
+import Repositories from '../../containers/Repositories';
 import styles from './App.scss';
 
 export const App = () => (
@@ -11,7 +12,7 @@ export const App = () => (
     <main>
       <Switch>
         <Route exact path="/counter" component={Counter} />
-        <Route exact path="/todo" component={Home} />
+        <Route exact path="/repositories" component={Repositories} />
         <Route component={Home} />
       </Switch>
     </main>
