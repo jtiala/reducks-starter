@@ -1,9 +1,9 @@
 import reducer, { initialState } from './reducers';
+import * as records from './records';
 import * as selectors from './selectors';
 import * as operations from './operations';
 import * as types from './types';
-import * as records from './records';
 
-export { initialState, selectors, operations, types, records };
+export { records, initialState, selectors, types, operations };
 
 export default reducer;

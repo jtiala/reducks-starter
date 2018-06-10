@@ -10,10 +10,24 @@ export const records = {
   Router,
 };
 
-// Reducer
+// Initial state
 export const initialState = Router();
 
-export default (state = initialState, action = {}) => {
+// Selectors
+export const selectors = {
+  getLocation: state => state.getIn(['router', 'location']),
+};
+
+// Types
+export const types = {
+  LOCATION_CHANGE,
+};
+
+// Operations
+export const operations = {};
+
+// Reducer
+export default (state = initialState, action) => {
   if (action.type === LOCATION_CHANGE) {
     return state.set('location', fromJS(action.payload));
   }
