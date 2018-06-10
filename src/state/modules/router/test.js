@@ -1,9 +1,8 @@
-import { Map } from 'immutable';
 import reducer, { records, initialState, selectors, types, operations } from '.';
 import { StoreRecord } from '../index';
 
 describe('Router', () => {
-  const testLocation = Map({
+  const testLocation = records.Location({
     pathname: '/',
     search: '',
     hash: '',

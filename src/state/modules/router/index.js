@@ -1,12 +1,20 @@
 import { LOCATION_CHANGE } from 'react-router-redux';
-import { Record, fromJS } from 'immutable';
+import { Record } from 'immutable';
 
 // Records
+const Location = Record({
+  pathname: undefined,
+  search: undefined,
+  hash: undefined,
+  key: undefined,
+});
+
 const Router = Record({
-  location: null,
+  location: Location(),
 });
 
 export const records = {
+  Location,
   Router,
 };
 
@@ -34,7 +42,7 @@ export const operations = {
 // Reducer
 export default (state = initialState, action = {}) => {
   if (action.type === LOCATION_CHANGE) {
-    return state.set('location', fromJS(action.payload));
+    return state.set('location', Location(action.payload));
   }
 
   return state;
