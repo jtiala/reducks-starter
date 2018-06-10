@@ -8,7 +8,7 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 export default () => ({
   entry: {
-    index: './src/index.jsx',
+    index: ['babel-polyfill', './src/index.jsx'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
