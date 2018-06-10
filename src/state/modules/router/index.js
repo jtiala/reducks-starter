@@ -24,10 +24,15 @@ export const types = {
 };
 
 // Operations
-export const operations = {};
+export const operations = {
+  changeLocation: location => ({
+    type: LOCATION_CHANGE,
+    payload: location,
+  }),
+};
 
 // Reducer
-export default (state = initialState, action) => {
+export default (state = initialState, action = {}) => {
   if (action.type === LOCATION_CHANGE) {
     return state.set('location', fromJS(action.payload));
   }
