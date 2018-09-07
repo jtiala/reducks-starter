@@ -21,9 +21,9 @@ export const configureStore = (initialState = StoreRecord()) => {
 
     if (typeof devToolsExtension === 'function') {
       enhancers.push(devToolsExtension());
+    } else {
+      middleware.push(logger);
     }
-
-    middleware.push(logger);
   }
 
   const composedEnhancers = compose(
