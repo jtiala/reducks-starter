@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import classNames from 'classnames';
 import {
   selectors as counterSelectors,
-  operations as counterOperations,
+  actions as counterActions,
+  thunks as counterThunks,
 } from '../../../state/modules/counter';
 import Button from '../../components/Button';
 import styles from './Counter.scss';
@@ -48,9 +49,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  decrement: counterOperations.decrement,
-  increment: counterOperations.increment,
-  resetAndGotoHome: counterOperations.resetAndGotoHome,
+  decrement: counterActions.decrement,
+  increment: counterActions.increment,
+  resetAndGotoHome: counterThunks.resetAndGotoHome,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);

@@ -1,4 +1,4 @@
-import reducer, { records, initialState, selectors, types, operations } from '.';
+import reducer, { records, initialState, selectors, types, actions } from '.';
 import { StoreRecord } from '../index';
 
 describe('Router', () => {
@@ -21,8 +21,8 @@ describe('Router', () => {
 
   describe('Actions', () => {
     test(types.LOCATION_CHANGE, () => {
-      const operation = operations.changeLocation(testLocation);
-      expect(operation).toEqual({ type: types.LOCATION_CHANGE, payload: testLocation });
+      const action = actions.changeLocation(testLocation);
+      expect(action).toEqual({ type: types.LOCATION_CHANGE, payload: testLocation });
     });
   });
 
@@ -33,7 +33,7 @@ describe('Router', () => {
     });
 
     test(types.LOCATION_CHANGE, () => {
-      const state = reducer(initialState, operations.changeLocation(testLocation));
+      const state = reducer(initialState, actions.changeLocation(testLocation));
       expect(state.get('location')).toEqual(testLocation);
     });
   });

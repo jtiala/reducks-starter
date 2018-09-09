@@ -1,4 +1,4 @@
-import reducer, { records, initialState, selectors, types, operations } from '.';
+import reducer, { records, initialState, selectors, types, actions, thunks } from '.';
 import { StoreRecord } from '../index';
 
 describe('Counter', () => {
@@ -36,24 +36,24 @@ describe('Counter', () => {
 
   describe('Actions', () => {
     test(types.INCREMENT, () => {
-      const operation = operations.increment();
+      const operation = actions.increment();
       expect(operation).toEqual({ type: types.INCREMENT });
     });
 
     test(types.DECREMENT, () => {
-      const operation = operations.decrement();
+      const operation = actions.decrement();
       expect(operation).toEqual({ type: types.DECREMENT });
     });
 
     test(types.RESET, () => {
-      const operation = operations.reset();
+      const operation = actions.reset();
       expect(operation).toEqual({ type: types.RESET });
     });
   });
 
   describe('Thunks', () => {
     test('resetAndGotoHome', () => {
-      const operation = operations.resetAndGotoHome();
+      const operation = thunks.resetAndGotoHome();
       expect(typeof operation).toEqual('function');
     });
   });
@@ -65,26 +65,26 @@ describe('Counter', () => {
     });
 
     test(types.INCREMENT, () => {
-      let state = reducer(initialState, operations.increment());
+      let state = reducer(initialState, actions.increment());
       expect(state.get('count')).toBe(initialState.get('count') + 1);
 
-      state = reducer(state, operations.increment());
+      state = reducer(state, actions.increment());
       expect(state.get('count')).toBe(initialState.get('count') + 2);
     });
 
     test(types.DECREMENT, () => {
-      let state = reducer(initialState, operations.decrement());
+      let state = reducer(initialState, actions.decrement());
       expect(state.get('count')).toBe(initialState.get('count') - 1);
 
-      state = reducer(state, operations.decrement());
+      state = reducer(state, actions.decrement());
       expect(state.get('count')).toBe(initialState.get('count') - 2);
     });
 
     test(types.RESET, () => {
-      let state = reducer(initialState, operations.increment());
+      let state = reducer(initialState, actions.increment());
       expect(state.get('count')).toBe(initialState.get('count') + 1);
 
-      state = reducer(state, operations.reset());
+      state = reducer(state, actions.reset());
       expect(state.get('count')).toBe(initialState.get('count'));
     });
   });

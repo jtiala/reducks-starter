@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { OrderedSet } from 'immutable';
 import {
   selectors as repositoriesSelectors,
-  operations as repositoriesOperations,
+  actions as repositoriesActions,
 } from '../../../state/modules/repositories';
 import RepositoryList from '../../components/RepositoryList';
 
@@ -30,7 +30,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  fetchRepositories: repositoriesOperations.fetchRepositories,
+  fetchRepositories: repositoriesActions.fetchRepositories,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Repositories);

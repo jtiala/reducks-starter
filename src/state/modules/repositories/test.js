@@ -1,4 +1,4 @@
-import reducer, { records, initialState, selectors, types, operations } from '.';
+import reducer, { records, initialState, selectors, types, actions } from '.';
 import { mocks, transformers } from '../../apis/github';
 import { StoreRecord } from '../index';
 import { apiRequestType, apiSuccessType, apiFailureType } from '../../utils/actions';
@@ -60,7 +60,7 @@ describe('Repositories', () => {
 
       expect(selectors.hasRepositories(store)).toBe(true);
 
-      state = reducer(state, operations.clear());
+      state = reducer(state, actions.clear());
 
       store = StoreRecord({
         repositories: state,
@@ -139,7 +139,7 @@ describe('Repositories', () => {
 
       expect(selectors.hasError(store)).toBe(true);
 
-      state = reducer(state, operations.clear());
+      state = reducer(state, actions.clear());
 
       store = StoreRecord({
         repositories: state,

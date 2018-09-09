@@ -31,8 +31,8 @@ export const types = {
   LOCATION_CHANGE,
 };
 
-// Operations
-export const operations = {
+// Actions
+export const actions = {
   changeLocation: location => ({
     type: LOCATION_CHANGE,
     payload: location,
