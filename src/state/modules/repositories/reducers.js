@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux-immutable';
-import { OrderedSet } from 'immutable';
 import { Repositories } from './records';
 import * as types from './types';
+import { apiRequestType, apiSuccessType, apiFailureType } from '../../utils/actions';
 
 export const initialState = Repositories();
 
 const dataReducer = (state = initialState.data, action = {}) => {
   switch (action.type) {
-    case types.FETCH_REPOSITORIES_SUCCESS:
-      return OrderedSet(action.payload);
-    case types.FETCH_REPOSITORIES_FAILURE:
+    case apiSuccessType(types.FETCH_REPOSITORIES):
+      return action.payload;
+    case apiFailureType(types.FETCH_REPOSITORIES):
     case types.CLEAR:
       return initialState.data;
     default:
@@ -19,16 +19,18 @@ const dataReducer = (state = initialState.data, action = {}) => {
 
 const statusReducer = (state = initialState.status, action = {}) => {
   switch (action.type) {
-    case types.FETCH_REPOSITORIES_START:
+    case apiRequestType(types.FETCH_REPOSITORIES):
       return state
         .set('fetching', true)
         .set('error', undefined);
-    case types.FETCH_REPOSITORIES_SUCCESS:
+    case apiSuccessType(types.FETCH_REPOSITORIES):
       return state.set('fetching', false);
-    case types.FETCH_REPOSITORIES_FAILURE:
+    case apiFailureType(types.FETCH_REPOSITORIES):
       return state
         .set('fetching', false)
         .set('error', action.payload);
+    case types.CLEAR:
+      return initialState.status;
     default:
       return state;
   }

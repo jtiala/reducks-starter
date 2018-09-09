@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "fetch-mock": "^7.0.0-alpha.6",
     "history": "^4.7.2",
     "immutable": "^4.0.0-rc.9",
     "modern-normalize": "^0.4.0",

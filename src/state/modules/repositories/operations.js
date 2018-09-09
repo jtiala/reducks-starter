@@ -1,2 +1,1 @@
-export { clear } from './actions';
-export { fetchRepositories } from './thunks';
+export { fetchRepositories, clear } from './actions';
