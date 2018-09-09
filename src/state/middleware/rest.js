@@ -2,7 +2,7 @@ import fetchMock from 'fetch-mock';
 import { apiRequestType, apiSuccessType, apiFailureType } from '../utils/actions';
 
 export default ({ dispatch }) => next => async (action) => {
-  if (!action.meta || !action.meta.fetch) {
+  if (!action.meta || !action.meta.rest || !action.meta.rest.url) {
     return next(action);
   }
 
@@ -11,11 +11,7 @@ export default ({ dispatch }) => next => async (action) => {
     options = { method: 'GET' },
     transformer,
     mock,
-  } = action.meta.fetch;
-
-  if (!url) {
-    throw new Error(`Fetch: URL not specified for fetch action ${action.type}`);
-  }
+  } = action.meta.rest;
 
   dispatch({ type: apiRequestType(action.type) });
 

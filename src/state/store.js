@@ -4,7 +4,7 @@ import { routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import fetchMiddleware from './middleware/fetch';
+import restMiddleware from './middleware/rest';
 import { reducers, StoreRecord } from './modules/index';
 
 export const history = createHistory();
@@ -12,7 +12,7 @@ export const history = createHistory();
 export const configureStore = (initialState = StoreRecord()) => {
   const enhancers = [];
   const middleware = [
-    fetchMiddleware,
+    restMiddleware,
     thunk,
     routerMiddleware(history),
   ];

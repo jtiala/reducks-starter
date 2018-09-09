@@ -4,8 +4,8 @@ export const API_URL = 'https://api.github.com';
 
 export const getRepositories = (mock = undefined) => ({
   meta: {
-    fetch: {
-      url: `${API_URL}/repositoriess`,
+    rest: {
+      url: `${API_URL}/repositories`,
       options: {
         method: 'GET',
       },
