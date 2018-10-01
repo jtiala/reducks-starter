@@ -1,17 +1,16 @@
-import path from 'path';
-import autoprefixer from 'autoprefixer';
-import flexbugs from 'postcss-flexbugs-fixes';
-import HtmlWebPackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import CleanWebpackPlugin from 'clean-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
+const path = require('path');
+const autoprefixer = require('autoprefixer');
+const flexbugs = require('postcss-flexbugs-fixes');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-export default () => ({
-  entry: {
-    index: ['babel-polyfill', './src/index.jsx'],
-  },
+module.exports = {
+  entry: ['@babel/polyfill', './src/index.jsx'],
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.join(__dirname, '/dist'),
+    publicPath: '/',
     filename: 'bundle.js',
   },
   module: {
@@ -19,12 +18,7 @@ export default () => ({
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env', 'react'],
-          },
-        },
+        use: ['babel-loader'],
       },
       {
         test: /\.(css|scss)$/,
@@ -89,4 +83,4 @@ export default () => ({
     historyApiFallback: true,
     contentBase: path.join(__dirname, 'src/static'),
   },
-});
+};
