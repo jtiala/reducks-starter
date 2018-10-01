@@ -5,6 +5,8 @@ import * as actions from './actions';
 import * as thunks from './thunks';
 import * as types from './types';
 
-export { records, initialState, selectors, types, actions, thunks };
+export {
+  records, initialState, selectors, types, actions, thunks,
+};
 
 export default reducer;

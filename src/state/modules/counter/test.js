@@ -1,4 +1,6 @@
-import reducer, { records, initialState, selectors, types, actions, thunks } from '.';
+import reducer, {
+  records, initialState, selectors, types, actions, thunks,
+} from '.';
 import { StoreRecord } from '../index';
 
 describe('Counter', () => {
