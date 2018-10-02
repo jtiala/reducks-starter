@@ -10,10 +10,15 @@
       "jsx": true
     }
   },
-  "plugins": [
-    "prettier"
-  ],
-  "rules":{
-    "prettier/prettier": "error"
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*.{stories,test}.{js,jsx}"],
+        "optionalDependencies": false
+      }
+    ]
   }
 }
