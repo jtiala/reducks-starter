@@ -4,6 +4,5 @@
 
 - GraphQL middleware
 - Storybook
-- Prettier
 - HMR
 - Write readme
