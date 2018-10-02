@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const flexbugs = require('postcss-flexbugs-fixes');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
@@ -6,7 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-module.exports = {
+const webpackConfig = {
   entry: ['@babel/polyfill', './src/index.jsx'],
   output: {
     path: path.join(__dirname, '/dist'),
@@ -76,8 +77,15 @@ module.exports = {
       filename: 'styles.css',
     }),
   ],
-  devServer: {
+};
+
+if (process.env.NODE_ENV === 'development') {
+  webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
+  webpackConfig.devServer = {
+    hot: true,
     historyApiFallback: true,
     contentBase: path.join(__dirname, 'src/static'),
-  },
-};
+  };
+}
+
+module.exports = webpackConfig;

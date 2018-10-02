@@ -1,12 +1,5 @@
 # 🦆 Reducks Starter
 
-## TODO
-
-- GraphQL middleware
-- Storybook
-- HMR
-
-
 ## Installation / Usage
 
 ![Reducks index page](https://i.imgur.com/craV9Js.png)
@@ -32,3 +25,7 @@ After it's done loading, simply execute npm start and navigate to localhost:8080
 
 Happy hacking!
 
+## TODO
+
+- GraphQL middleware
+- Storybook
