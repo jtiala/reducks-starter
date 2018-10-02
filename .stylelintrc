@@ -1,4 +1,7 @@
 {
-  "extends": "stylelint-config-recess-order",
+  "extends": [
+    "stylelint-config-idiomatic-order",
+    "stylelint-prettier/recommended",
+  ],
   "syntax": "scss"
 }

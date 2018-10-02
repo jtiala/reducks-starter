@@ -29,11 +29,7 @@ coverage
 .DS_Store
 ._.DS_Store
 
-# IntelliJ IDE
-.idea
-
-# Visual Studio Code
+# Editors
 .vscode
-
-# Vim swp files
+.idea
 *.swp

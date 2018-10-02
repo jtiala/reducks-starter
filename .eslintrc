@@ -4,10 +4,16 @@
     "browser": true,
     "jest": true
   },
-  "extends": "airbnb",
+  "extends": ["airbnb", "prettier", "prettier/react"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     }
+  },
+  "plugins": [
+    "prettier"
+  ],
+  "rules":{
+    "prettier/prettier": "error"
   }
 }
