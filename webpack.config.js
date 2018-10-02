@@ -75,11 +75,11 @@ const webpackConfig = {
     }),
     new MiniCssExtractPlugin({
       filename: 'styles.css',
-    })
-  ]
+    }),
+  ],
 };
 
-if (process.env.NODE_ENV === 'dev') {
+if (process.env.NODE_ENV === 'development') {
   webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
   webpackConfig.devServer = {
     hot: true,

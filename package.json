@@ -22,8 +22,8 @@
     "url": "https://github.com/jtiala/reducks-starter"
   },
   "scripts": {
-    "build": "NODE_ENV=prod webpack --mode production",
-    "start": "NODE_ENV=dev webpack-dev-server --watch --watch-content-base --mode development",
+    "build": "NODE_ENV=production webpack --mode production",
+    "start": "NODE_ENV=development webpack-dev-server --watch --watch-content-base --mode development",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
