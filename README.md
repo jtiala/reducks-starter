@@ -4,5 +4,4 @@
 
 - GraphQL middleware
 - Storybook
-- HMR
 - Write readme
