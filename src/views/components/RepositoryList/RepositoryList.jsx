@@ -8,7 +8,7 @@ import styles from './RepositoryList.scss';
 const RepositoryList = ({ fetchRepositories, hasRepositories, repositories }) => (
   <div className={styles.root}>
     <Button onClick={() => fetchRepositories()}>Fetch public repositories from GitHub</Button>
-    <Button onClick={() => fetchRepositories(mocks.getRepositoriesSuccess.body)}>
+    <Button onClick={() => fetchRepositories(mocks.getRepositoriesSuccess)}>
       Fetch public repositories from GitHub (using a mock)
     </Button>
     {hasRepositories && (

@@ -4,10 +4,8 @@ import { StoreRecord } from '../index';
 import { apiRequestType, apiSuccessType, apiFailureType } from '../../utils/actions';
 
 describe('Repositories', () => {
-  const getRepositoriesSuccessPayload = transformers.getRepositories(
-    mocks.getRepositoriesSuccess.body,
-  );
-  const getRepositoriesFailurePayload = mocks.getRepositoriesFailure.body;
+  const getRepositoriesSuccessPayload = transformers.getRepositories(mocks.getRepositoriesSuccess);
+  const getRepositoriesFailurePayload = mocks.getRepositoriesSuccess;
 
   describe('data', () => {
     test('Initial state', () => {
@@ -32,7 +30,7 @@ describe('Repositories', () => {
         repositories: state,
       });
 
-      expect(selectors.getRepositories(store).size).toBe(mocks.getRepositoriesSuccess.body.length);
+      expect(selectors.getRepositories(store).size).toBe(mocks.getRepositoriesSuccess.length);
       expect(selectors.hasRepositories(store)).toBe(true);
     });
 
@@ -133,7 +131,7 @@ describe('Repositories', () => {
     test(types.CLEAR, () => {
       let state = reducer(initialState, {
         type: apiFailureType(types.FETCH_REPOSITORIES),
-        payload: mocks.getRepositoriesFailure.body,
+        payload: getRepositoriesFailurePayload,
       });
 
       let store = StoreRecord({
