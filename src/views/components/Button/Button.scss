@@ -1,11 +1,11 @@
-@import '../../styles/colors.scss';
+@import '../../styles/_colors.scss';
 
 .root {
   padding: 10px 20px;
-  margin: 2px;
-  color: $dark;
-  background: $primary;
   border: 0;
+  margin: 2px;
+  background: $primary;
+  color: $dark;
 
   &:hover {
     background: darken($primary, 10%);

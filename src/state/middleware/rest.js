@@ -1,17 +1,12 @@
 import fetchMock from 'fetch-mock';
 import { apiRequestType, apiSuccessType, apiFailureType } from '../utils/actions';
 
-export default ({ dispatch }) => next => async (action) => {
+export default ({ dispatch }) => (next) => async (action) => {
   if (!action.meta || !action.meta.rest || !action.meta.rest.url) {
     return next(action);
   }
 
-  const {
-    url,
-    options = { method: 'GET' },
-    transformer,
-    mock,
-  } = action.meta.rest;
+  const { url, options = { method: 'GET' }, transformer, mock } = action.meta.rest;
 
   dispatch({ type: apiRequestType(action.type) });
 

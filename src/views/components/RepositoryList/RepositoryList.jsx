@@ -4,18 +4,16 @@ import { OrderedSet } from 'immutable';
 import Button from '../Button';
 import styles from './RepositoryList.scss';
 
-const RepositoryList = props => (
+const RepositoryList = ({ fetchRepositories, hasRepositories, repositories }) => (
   <div className={styles.root}>
-    {props.hasRepositories ? (
+    {hasRepositories ? (
       <ul>
-        {props.repositories.map(repository => (
+        {repositories.map((repository) => (
           <li key={`repo-${repository.id}`}>{repository.name}</li>
         ))}
       </ul>
     ) : (
-      <Button onClick={props.fetchRepositories}>
-        Fetch public repositories from GitHub
-      </Button>
+      <Button onClick={fetchRepositories}>Fetch public repositories from GitHub</Button>
     )}
   </div>
 );

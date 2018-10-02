@@ -1,6 +1,4 @@
-import reducer, {
-  records, initialState, selectors, types, actions,
-} from '.';
+import reducer, { records, initialState, selectors, types, actions } from '.';
 import { mocks, transformers } from '../../apis/github';
 import { StoreRecord } from '../index';
 import { apiRequestType, apiSuccessType, apiFailureType } from '../../utils/actions';
@@ -53,9 +51,11 @@ describe('Repositories', () => {
     });
 
     test(types.CLEAR, () => {
-      let state = reducer(records.Repositories({
-        data: getRepositoriesSuccessPayload,
-      }));
+      let state = reducer(
+        records.Repositories({
+          data: getRepositoriesSuccessPayload,
+        }),
+      );
 
       let store = StoreRecord({
         repositories: state,

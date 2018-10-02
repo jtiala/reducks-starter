@@ -10,25 +10,35 @@ import {
 import Button from '../../components/Button';
 import styles from './Counter.scss';
 
-export const Counter = (props) => {
+export const Counter = ({
+  count,
+  decrement,
+  increment,
+  isNegative,
+  isPositive,
+  resetAndGotoHome,
+}) => {
   const counterStyles = classNames(styles.number, {
-    [styles.positive]: props.isPositive,
-    [styles.negative]: props.isNegative,
+    [styles.positive]: isPositive,
+    [styles.negative]: isNegative,
   });
 
   return (
     <section>
-      <Button onClick={props.decrement}>
-        <span role="img" aria-label="minus">➖</span>
+      <Button onClick={decrement}>
+        <span role="img" aria-label="minus">
+          ➖
+        </span>
       </Button>
-      <span className={counterStyles}>{props.count}</span>
-      <Button onClick={props.increment}>
-        <span role="img" aria-label="plus">➕</span>
+      <span className={counterStyles}>{count}</span>
+      <Button onClick={increment}>
+        <span role="img" aria-label="plus">
+          ➕
+        </span>
       </Button>
-      <br /><br />
-      <Button onClick={props.resetAndGotoHome}>
-        Reset counter and go to home
-      </Button>
+      <br />
+      <br />
+      <Button onClick={resetAndGotoHome}>Reset counter and go to home</Button>
     </section>
   );
 };
@@ -42,7 +52,7 @@ Counter.propTypes = {
   resetAndGotoHome: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   count: counterSelectors.getCount(state),
   isNegative: counterSelectors.isCountNegative(state),
   isPositive: counterSelectors.isCountPositive(state),
@@ -54,4 +64,7 @@ const mapDispatchToProps = {
   resetAndGotoHome: counterThunks.resetAndGotoHome,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Counter);

@@ -11,11 +11,7 @@ export const history = createHistory();
 
 export const configureStore = (initialState = StoreRecord()) => {
   const enhancers = [];
-  const middleware = [
-    restMiddleware,
-    thunk,
-    routerMiddleware(history),
-  ];
+  const middleware = [restMiddleware, thunk, routerMiddleware(history)];
 
   if (process.env.NODE_ENV === 'development') {
     // eslint-disable-next-line no-underscore-dangle
@@ -35,11 +31,7 @@ export const configureStore = (initialState = StoreRecord()) => {
 
   const rootReducer = combineReducers(reducers, StoreRecord);
 
-  return createStore(
-    rootReducer,
-    initialState,
-    composedEnhancers,
-  );
+  return createStore(rootReducer, initialState, composedEnhancers);
 };
 
 export default configureStore();

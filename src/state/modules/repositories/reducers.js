@@ -20,15 +20,11 @@ const dataReducer = (state = initialState.data, action = {}) => {
 const statusReducer = (state = initialState.status, action = {}) => {
   switch (action.type) {
     case apiRequestType(types.FETCH_REPOSITORIES):
-      return state
-        .set('fetching', true)
-        .set('error', undefined);
+      return state.set('fetching', true).set('error', undefined);
     case apiSuccessType(types.FETCH_REPOSITORIES):
       return state.set('fetching', false);
     case apiFailureType(types.FETCH_REPOSITORIES):
-      return state
-        .set('fetching', false)
-        .set('error', action.payload);
+      return state.set('fetching', false).set('error', action.payload);
     case types.CLEAR:
       return initialState.status;
     default:
@@ -36,7 +32,10 @@ const statusReducer = (state = initialState.status, action = {}) => {
   }
 };
 
-export default combineReducers({
-  data: dataReducer,
-  status: statusReducer,
-}, Repositories);
+export default combineReducers(
+  {
+    data: dataReducer,
+    status: statusReducer,
+  },
+  Repositories,
+);

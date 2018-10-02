@@ -23,7 +23,7 @@ export const initialState = Router();
 
 // Selectors
 export const selectors = {
-  getLocation: state => state.getIn(['router', 'location']),
+  getLocation: (state) => state.getIn(['router', 'location']),
 };
 
 // Types
@@ -33,7 +33,7 @@ export const types = {
 
 // Actions
 export const actions = {
-  changeLocation: location => ({
+  changeLocation: (location) => ({
     type: LOCATION_CHANGE,
     payload: location,
   }),

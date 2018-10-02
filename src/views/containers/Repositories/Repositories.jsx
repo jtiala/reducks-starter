@@ -8,12 +8,12 @@ import {
 } from '../../../state/modules/repositories';
 import RepositoryList from '../../components/RepositoryList';
 
-export const Repositories = props => (
+export const Repositories = ({ fetchRepositories, hasRepositories, repositories }) => (
   <section>
     <RepositoryList
-      fetchRepositories={props.fetchRepositories}
-      hasRepositories={props.hasRepositories}
-      repositories={props.repositories}
+      fetchRepositories={fetchRepositories}
+      hasRepositories={hasRepositories}
+      repositories={repositories}
     />
   </section>
 );
@@ -24,7 +24,7 @@ Repositories.propTypes = {
   repositories: PropTypes.instanceOf(OrderedSet).isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   hasRepositories: repositoriesSelectors.hasRepositories(state),
   repositories: repositoriesSelectors.getRepositories(state),
 });
@@ -33,4 +33,7 @@ const mapDispatchToProps = {
   fetchRepositories: repositoriesActions.fetchRepositories,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Repositories);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Repositories);

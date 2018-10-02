@@ -1,10 +1,10 @@
-@import '../../styles/colors.scss';
+@import '../../styles/_colors.scss';
 
 .root {
-  margin-top: 20px;
-  margin-bottom: 20px;
   border-top: 1px solid $light;
   border-bottom: 1px solid $light;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   ul {
     display: flex;
@@ -14,8 +14,8 @@
 
     li {
       flex: 1;
-      text-align: center;
       list-style: none;
+      text-align: center;
 
       a {
         color: $dark;

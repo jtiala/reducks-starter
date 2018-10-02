@@ -1,6 +1,4 @@
-import reducer, {
-  records, initialState, selectors, types, actions,
-} from '.';
+import reducer, { records, initialState, selectors, types, actions } from '.';
 import { StoreRecord } from '../index';
 
 describe('Router', () => {

@@ -41,12 +41,7 @@ module.exports = {
               plugins: () => [
                 flexbugs,
                 autoprefixer({
-                  browsers: [
-                    '>1%',
-                    'last 4 versions',
-                    'Firefox ESR',
-                    'not ie < 9',
-                  ],
+                  browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
                   flexbox: 'no-2009',
                 }),
               ],
@@ -67,9 +62,11 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin('./dist'),
-    new CopyWebpackPlugin([{
-      from: 'src/static',
-    }]),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/static',
+      },
+    ]),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',

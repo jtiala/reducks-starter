@@ -4,8 +4,6 @@ import * as selectors from './selectors';
 import * as actions from './actions';
 import * as types from './types';
 
-export {
-  records, initialState, selectors, types, actions,
-};
+export { records, initialState, selectors, types, actions };
 
 export default reducer;

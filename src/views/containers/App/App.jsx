@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from '../../components/Header';
-import Home from '../../containers/Home';
-import Counter from '../../containers/Counter';
-import Repositories from '../../containers/Repositories';
+import Home from '../Home';
+import Counter from '../Counter';
+import Repositories from '../Repositories';
 import styles from './App.scss';
 
 export const App = () => (

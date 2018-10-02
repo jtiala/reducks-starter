@@ -26,9 +26,7 @@ describe('<Button />', () => {
 
   it('renders children when passed in', () => {
     const child = <div className="child" />;
-    const wrapper = shallow((
-      <Button>{child}</Button>
-    ));
+    const wrapper = shallow(<Button>{child}</Button>);
 
     expect(wrapper.contains(child)).toBe(true);
   });
