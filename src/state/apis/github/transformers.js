@@ -17,4 +17,4 @@ export const transformRepository = (repository) =>
 
 // Requests
 export const getRepositories = (payload) =>
-  Array.isArray(payload) ? OrderedSet(payload.map(transformRepository)) : OrderedSet();
+  Array.isArray(payload) ? OrderedSet(payload.slice(0, 5).map(transformRepository)) : OrderedSet();
