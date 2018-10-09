@@ -16,7 +16,7 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["**/*.{stories,test}.{js,jsx}"],
+        "devDependencies": ["**/*.{stories,test}.{js,jsx}", "webpack.config.js"],
         "optionalDependencies": false
       }
     ]
