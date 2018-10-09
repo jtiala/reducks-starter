@@ -62,6 +62,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^4.0.0-alpha.23",
+    "@storybook/addons": "^3.4.11",
     "@storybook/react": "^4.0.0-alpha.23",
     "autoprefixer": "^9.1.5",
     "babel-core": "^7.0.0-bridge.0",
