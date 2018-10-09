@@ -6,15 +6,17 @@ import {
   selectors as repositoriesSelectors,
   actions as repositoriesActions,
 } from '../../../state/modules/repositories';
+import { mocks } from '../../../state/apis/github';
+import Button from '../../components/Button';
 import RepositoryList from '../../components/RepositoryList';
 
 export const Repositories = ({ fetchRepositories, hasRepositories, repositories }) => (
   <section>
-    <RepositoryList
-      fetchRepositories={fetchRepositories}
-      hasRepositories={hasRepositories}
-      repositories={repositories}
-    />
+    <Button onClick={() => fetchRepositories()}>Fetch public repositories from GitHub</Button>
+    <Button onClick={() => fetchRepositories(mocks.getRepositoriesSuccess)}>
+      Fetch public repositories from GitHub (using a mock)
+    </Button>
+    <RepositoryList hasRepositories={hasRepositories} repositories={repositories} />
   </section>
 );
 
