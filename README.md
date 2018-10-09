@@ -1,5 +1,9 @@
 # 🦆 Reducks Starter
 
+[![Build Status](https://travis-ci.com/jtiala/reducks-starter.svg?branch=master)](https://travis-ci.com/jtiala/reducks-starter)
+![Dependecies Status](https://img.shields.io/david/jtiala/reducks-starter.svg)
+![License](https://img.shields.io/github/license/jtiala/reducks-starter.svg)
+
 ## Installation / Usage
 
 ![Reducks index page](https://i.imgur.com/craV9Js.png)
