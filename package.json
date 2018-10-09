@@ -27,7 +27,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "lint": "yarn lint:js && yarn lint:styles && lint:other",
+    "lint": "yarn lint:js && yarn lint:styles && yarn lint:other",
     "lint:fix": "yarn lint:js:fix && yarn lint:styles:fix",
     "lint:js": "eslint src/**/*.{js,jsx}",
     "lint:js:fix": "eslint src/**/*.{js,jsx} --fix",
