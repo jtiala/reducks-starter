@@ -90,6 +90,7 @@
     "prettier": "^1.14.3",
     "regenerator-runtime": "^0.12.1",
     "sass-loader": "^7.1.0",
+    "storybook-react-router": "^1.0.1",
     "stylelint": "^9.6.0",
     "stylelint-config-idiomatic-order": "^5.0.0",
     "stylelint-config-prettier": "^4.0.0",

@@ -5,7 +5,6 @@ import RepositoryList from './RepositoryList';
 
 describe('<RepositoryList />', () => {
   const props = {
-    fetchRepositories: jest.fn(),
     hasRepositories: false,
     repositories: OrderedSet(),
   };
