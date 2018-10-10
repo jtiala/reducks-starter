@@ -1,12 +1,12 @@
 # 🦆 Reducks Starter
 
-> Reducks Starter is a highly opinionated React/Redux boilerplate based on the [re-ducks approach][re-ducks]. Live example [here][example].
-
 [![Build Status][build-status-badge]][build-status]
 [![Dependencies Status][dependencies-status-badge]][dependencies-status]
 [![Dev Dependencies Status][devdependencies-status-badge]][devdependencies-status]
 [![PRs Welcome][prs-badge]][contributing]
 [![License][license-badge]](license)
+
+> Reducks Starter is a highly opinionated React/Redux boilerplate based on the [re-ducks approach][re-ducks]. Live example [here][example].
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@
 4. [How](#how)
 5. [Changelog](#changelog)
 6. [Contributing](#contributing)
-7. [License](#License)
+7. [License](#license)
 
 ## Why
 
@@ -40,7 +40,7 @@ Like stated before, this is boilerplate with the features and structure I like t
 - Tests with [Jest][jest] and [Enzyme][enzyme]
 - Next generation JavaScript with [Babel v7][babel]
 - Bundling with [Webpack v4][webpack]
-- Formatting and linting with [Prettier][https://prettier.io/], [ESLint][eslint] and [Stylelint][stylelint]
+- Formatting and linting with [Prettier][prettier], [ESLint][eslint] and [Stylelint][stylelint]
 - [Storybook][storybook], [Redux DevTools][redux-dev-tools] and [Webpack DevServer][webpack-dev-server] with hot module replacement (HMR) for pleasant developer experience
 - **Examples for everything included!**
 
