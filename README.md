@@ -33,7 +33,7 @@ Like stated before, this is boilerplate with the features and structure I like t
 ## What
 
 - [React v16][react] with [React Router v4][react-router]
-- [Redux v4][redux] with [Immutable.js v4][immutable] based store tree
+- [Redux v4][redux] with [Immutable.js v4][immutable] based store tree, side effects with [redux-thunk][redux-thunk]
 - [Re-ducks][re-ducks] inspired modules
 - Custom REST API middleware completed with mocking and transforming functionalities
 - [CSS Modules][css-modules] with [Sass][sass]
@@ -250,6 +250,7 @@ This project is open source software licensed under the MIT license. For more in
 [react]: https://reactjs.org/
 [redux]: https://redux.js.org/
 [immutable]: https://facebook.github.io/immutable-js/
+[redux-thunk]: https://github.com/reduxjs/redux-thunk
 [react-router]: https://github.com/ReactTraining/react-router
 [css-modules]: https://github.com/css-modules/css-modules
 [sass]: https://sass-lang.com/
