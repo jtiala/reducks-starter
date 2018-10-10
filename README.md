@@ -1,12 +1,12 @@
 # 🦆 Reducks Starter
 
-> Reducks Starter is a highly opinionated React/Redux boilerplate based on the [re-ducks approach](re-ducks).
+> Reducks Starter is a highly opinionated React/Redux boilerplate based on the [re-ducks approach][re-ducks]. Live example [here][example].
 
 [![Build Status][build-status-badge]][build-status]
 [![Dependencies Status][dependencies-status-badge]][dependencies-status]
 [![Dev Dependencies Status][devdependencies-status-badge]][devdependencies-status]
 [![PRs Welcome][prs-badge]][contributing]
-[![License][license-badge]][license]
+[![License][license-badge]](license)
 
 ## Table of Contents
 
@@ -20,28 +20,28 @@
 
 ## Why
 
-The primary goal of Reducks Starter is to be a boilerplate [I myself](jtiala) like to use while also giving lots of examples to be easily adoptable for others.
+The primary goal of Reducks Starter is to be a boilerplate [I myself][jtiala] like to use while also giving lots of examples to be easily adoptable for others.
 
-After evaluating other boilerplates and starter projects, I didn't find any that I would be happy to use as the foundation for my own projects. I really like the [ducks approach](ducks) by [erikras](erikras). The [re-ducks](re-ducks) extension by [alexnm](alexnm) makes it even better. I also like to have my Redux store to be based on [Immutable.js](immutable) records. Not many boilerplates have these features and as most of them are multiple versions out of the date, it's difficult to add them in. So, clearly there is room for yet another boilerplate, right?
+After evaluating other boilerplates and starter projects, I didn't find any that I would be happy to use as the foundation for my own projects. I really like the [ducks approach][ducks] by [erikras][erikras]. The [re-ducks][re-ducks] extension by [alexnm][alexnm] makes it even better. I also like to have my Redux store to be based on [Immutable.js][immutable] records. Not many boilerplates have these features and as most of them are multiple versions out of the date, it's difficult to add them in. So, clearly there is room for yet another boilerplate, right?
 
 ## Why not
 
-While this boilerplate is easy way to start a new project quickly without messing around with packages and configs, it might be too much for some projects. Every project might not need everything included in Reducks Starter. You might prefer [styled-components](styled-components) over [CSS Modules](css-modules). Someone might think [Immutable.js](immutable) is unnecessary and only adds to the weight. Sometimes removing stuff can take more time than just starting from the beginning, so you should consider your options before using any boilerplate.
+While this boilerplate is easy way to start a new project quickly without messing around with packages and configs, it might be too much for some projects. Every project might not need everything included in Reducks Starter. You might prefer [styled-components][styled-components] over [CSS Modules][css-modules]. Someone might think [Immutable.js][immutable] is unnecessary and only adds to the weight. Sometimes removing stuff can take more time than just starting from the beginning, so you should consider your options before using any boilerplate.
 
 Like stated before, this is boilerplate with the features and structure I like the best. Creating your own boilerplate is lot of fun and really good learning experience so I highly encourage you to start from a blank page, if you have the time.
 
 ## What
 
-- [React v16](react) with [React Router v4](react-router)
-- [Redux v4](redux) with [Immutable.js v4](immutable) based store tree
-- [Re-ducks](re-ducks) inspired modules
+- [React v16][react] with [React Router v4][react-router]
+- [Redux v4][redux] with [Immutable.js v4][immutable] based store tree
+- [Re-ducks][re-ducks] inspired modules
 - Custom REST API middleware completed with mocking and transforming functionalities
-- [CSS Modules](css-modules) with [Sass](sass)
-- Tests with [Jest](jest) and [Enzyme](enzyme)
-- Next generation JavaScript with [Babel v7](babel)
-- Bundling with [Webpack v4](webpack)
-- Formatting and linting with [Prettier](https://prettier.io/), [ESLint](eslint) and [Stylelint](stylelint)
-- [Storybook](storybook), [Redux DevTools](redux-dev-tools) and [Webpack DevServer](webpack-dev-server) with hot module replacement (HMR) for pleasant developer experience
+- [CSS Modules][css-modules] with [Sass][sass]
+- Tests with [Jest][jest] and [Enzyme][enzyme]
+- Next generation JavaScript with [Babel v7][babel]
+- Bundling with [Webpack v4][webpack]
+- Formatting and linting with [Prettier][https://prettier.io/], [ESLint][eslint] and [Stylelint][stylelint]
+- [Storybook][storybook], [Redux DevTools][redux-dev-tools] and [Webpack DevServer][webpack-dev-server] with hot module replacement (HMR) for pleasant developer experience
 - **Examples for everything included!**
 
 ### Project structure
@@ -156,9 +156,9 @@ tree --dirsfirst -I 'node_modules|coverage|LICENSE|README.md|*config.js|package.
 
 ### Requirements
 
-- [Git](git)
-- [Node](node)
-- [Yarn](yarn)
+- [Git][git]
+- [Node][node]
+- [Yarn][yarn]
 
 ### Usage
 
@@ -225,11 +225,11 @@ $ yarn storybook
 
 ## Contributing
 
-While this project's main focus is to be my idea of a perfect boilerplate, I'm also happy to hear your ideas! If you would like to contribute to Reducks Starter, please discuss the changes you want to make in the [project's issues](issues) first!
+While this project's main focus is to be my idea of a perfect boilerplate, I'm also happy to hear your ideas! If you would like to contribute to Reducks Starter, please discuss the changes you want to make in the [project's issues][issues] first!
 
 ## License
 
-This project is open source software licensed under the MIT license. For more information see [LICENSE](license).
+This project is open source software licensed under the MIT license. For more information see [LICENSE][license].
 
 [build-status]: https://travis-ci.com/jtiala/reducks-starter
 [build-status-badge]: https://travis-ci.com/jtiala/reducks-starter.svg?branch=master
@@ -241,6 +241,7 @@ This project is open source software licensed under the MIT license. For more in
 [prs-badge]: https://img.shields.io/badge/prs-welcome-blue.svg
 [license]: https://github.com/jtiala/reducks-starter/blob/master/LICENSE
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[example]: https://jtiala.github.io/reducks-starter/
 [ducks]: https://github.com/erikras/ducks-modular-redux
 [erikras]: https://github.com/erikras
 [re-ducks]: https://github.com/alexnm/re-ducks
