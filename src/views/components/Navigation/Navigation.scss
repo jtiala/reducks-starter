@@ -1,10 +1,10 @@
 @import '../../styles/_colors.scss';
 
 .root {
-  border-top: 1px solid $light;
-  border-bottom: 1px solid $light;
   margin-top: 20px;
   margin-bottom: 20px;
+  border-top: 1px solid $light;
+  border-bottom: 1px solid $light;
 
   ul {
     display: flex;
