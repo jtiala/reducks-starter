@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 const flexbugs = require('postcss-flexbugs-fixes');
+const postcssPresetEnv = require('postcss-preset-env');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -38,13 +38,7 @@ const webpackConfig = {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              plugins: () => [
-                flexbugs,
-                autoprefixer({
-                  browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
-                  flexbox: 'no-2009',
-                }),
-              ],
+              plugins: () => [flexbugs, postcssPresetEnv()],
             },
           },
           {
