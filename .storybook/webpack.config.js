@@ -16,7 +16,6 @@ module.exports = {
               modules: true,
               importLoaders: 2,
               localIdentName: '[name]__[local]_[hash:base64:5]',
-              minimize: true,
             },
           },
           {

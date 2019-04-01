@@ -32,8 +32,8 @@ Like stated before, this is boilerplate with the features and structure I like t
 
 ## What
 
-- [React v16][react] with [React Router v4][react-router]
-- [Redux v4][redux] with [Immutable.js v4][immutable] based store tree, side effects with [redux-thunk][redux-thunk]
+- [React v16][react] with [React Router v5][react-router]
+- [Redux v5][redux] with [Immutable.js v4][immutable] based store tree, side effects with [redux-thunk][redux-thunk]
 - [Re-ducks][re-ducks] inspired modules
 - Custom REST API middleware completed with mocking and transforming functionalities
 - [CSS Modules][css-modules] with [Sass][sass]
@@ -81,9 +81,6 @@ tree --dirsfirst -I 'node_modules|coverage|LICENSE|README.md|*config.js|package.
     │   │   │   ├── selectors.js
     │   │   │   ├── test.js
     │   │   │   └── types.js
-    │   │   ├── router
-    │   │   │   ├── index.js
-    │   │   │   └── test.js
     │   │   └── index.js
     │   ├── utils
     │   │   └── actions.js

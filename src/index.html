@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <title>Reducks Starter</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+    />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="shortcut icon" href="/icons/favicon.ico" />
+    <meta name="theme-color" content="#84fab0" />
     <script defer="defer" src="./bundle.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
-    <link rel="stylesheet" type="text/css" href="./styles.css">
-    <link rel="manifest" href="./manifest.json">
-    <link rel="shortcut icon" href="/icons/favicon.ico">
-    <meta name="theme-color" content="#84fab0">
     <script>
       if ('serviceWorker' in window.navigator) {
         window.addEventListener('load', () => window.navigator.serviceWorker.register('/sw.js'));
@@ -20,8 +24,9 @@
   </head>
   <body>
     <noscript>
-      If you're seeing this message, that means <strong>JavaScript has been disabled on your browser</strong>,
-      please <strong>enable JavaScript</strong> to make this app work.
+      If you're seeing this message, that means
+      <strong>JavaScript has been disabled on your browser</strong>, please
+      <strong>enable JavaScript</strong> to make this app work.
     </noscript>
     <div id="root"></div>
   </body>

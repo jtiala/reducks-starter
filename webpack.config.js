@@ -32,7 +32,6 @@ const webpackConfig = {
               modules: true,
               importLoaders: 2,
               localIdentName: '[name]__[local]_[hash:base64:5]',
-              minimize: true,
             },
           },
           {
@@ -62,7 +61,7 @@ const webpackConfig = {
     extensions: ['.js', '.jsx'],
   },
   plugins: [
-    new CleanWebpackPlugin('./dist'),
+    new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
       {
         from: 'src/static',
