@@ -1,17 +1,16 @@
-import '@babel/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
-import store from './state/store';
+import { ConnectedRouter } from 'connected-react-router/immutable';
+import store, { history } from './state/store';
 import App from './views/containers/App';
 import './index.scss';
 
 const Root = () => (
   <Provider store={store}>
-    <Router>
+    <ConnectedRouter history={history}>
       <App />
-    </Router>
+    </ConnectedRouter>
   </Provider>
 );
 

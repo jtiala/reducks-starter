@@ -40,7 +40,9 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.0",
     "classnames": "^2.2.6",
+    "connected-react-router": "^6.3.2",
     "fetch-mock": "^7.3.1",
+    "history": "^4.9.0",
     "immutable": "^4.0.0-rc.12",
     "modern-normalize": "^0.5.0",
     "node-fetch": "^2.3.0",

@@ -1,6 +1,6 @@
 import reducer, { records, initialState, selectors, types, actions } from '.';
 import { mocks, transformers } from '../../apis/github';
-import { StoreRecord } from '../index';
+import { StoreRecord } from '../../store';
 import { apiRequestType, apiSuccessType, apiFailureType } from '../../utils/actions';
 
 describe('Repositories', () => {

@@ -73,15 +73,14 @@ tree --dirsfirst -I 'node_modules|coverage|LICENSE|README.md|*config.js|package.
     │   │   │   ├── test.js
     │   │   │   ├── thunks.js
     │   │   │   └── types.js
-    │   │   ├── repositories
-    │   │   │   ├── actions.js
-    │   │   │   ├── index.js
-    │   │   │   ├── records.js
-    │   │   │   ├── reducers.js
-    │   │   │   ├── selectors.js
-    │   │   │   ├── test.js
-    │   │   │   └── types.js
-    │   │   └── index.js
+    │   │   └── repositories
+    │   │       ├── actions.js
+    │   │       ├── index.js
+    │   │       ├── records.js
+    │   │       ├── reducers.js
+    │   │       ├── selectors.js
+    │   │       ├── test.js
+    │   │       └── types.js
     │   ├── utils
     │   │   └── actions.js
     │   └── store.js
