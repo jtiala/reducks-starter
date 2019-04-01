@@ -9,7 +9,7 @@ import restMiddleware from './middleware/rest';
 import counter, { records as counterRecords } from './modules/counter';
 import repositories, { records as repositoriesRecords } from './modules/repositories';
 
-export const history = createBrowserHistory();
+export const browserHistory = createBrowserHistory();
 
 export const moduleReducers = {
   counter,
@@ -22,18 +22,18 @@ export const StoreRecord = Record({
   router: undefined,
 });
 
-export const createRootReducer = (history, reducers, StoreRecord) =>
+export const createRootReducer = (history, reducers, defaultState) =>
   combineReducers(
     {
       router: connectRouter(history),
       ...reducers,
     },
-    StoreRecord,
+    defaultState,
   );
 
 export const configureStore = (initialState = StoreRecord()) => {
   const enhancers = [];
-  const middleware = [routerMiddleware(history), restMiddleware, thunkMiddleware];
+  const middleware = [routerMiddleware(browserHistory), restMiddleware, thunkMiddleware];
 
   if (process.env.NODE_ENV === 'development') {
     const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;
@@ -50,7 +50,7 @@ export const configureStore = (initialState = StoreRecord()) => {
     ...enhancers,
   );
 
-  const rootReducer = createRootReducer(history, moduleReducers, StoreRecord);
+  const rootReducer = createRootReducer(browserHistory, moduleReducers, StoreRecord);
 
   return createStore(rootReducer, initialState, composedEnhancers);
 };

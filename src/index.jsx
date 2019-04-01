@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router/immutable';
-import store, { history } from './state/store';
+import store, { browserHistory } from './state/store';
 import App from './views/containers/App';
 import './index.scss';
 
 const Root = () => (
   <Provider store={store}>
-    <ConnectedRouter history={history}>
+    <ConnectedRouter history={browserHistory}>
       <App />
     </ConnectedRouter>
   </Provider>
