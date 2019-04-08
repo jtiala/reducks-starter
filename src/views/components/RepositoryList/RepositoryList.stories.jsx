@@ -7,5 +7,12 @@ import RepositoryList from './RepositoryList';
 const repositories = transformers.getRepositories(mocks.getRepositoriesSuccess);
 
 storiesOf('components/RepositoryList', module)
-  .add('has repositories', () => <RepositoryList hasRepositories repositories={repositories} />)
-  .add('no repositories', () => <RepositoryList repositories={OrderedSet()} />);
+  .add('has repositories', () => (
+    <RepositoryList hasRepositories isFetching={false} repositories={repositories} />
+  ))
+  .add('is fetching', () => (
+    <RepositoryList hasRepositories={false} isFetching={true} repositories={OrderedSet()} />
+  ))
+  .add('no repositories', () => (
+    <RepositoryList hasRepositories={false} isFetching={false} repositories={OrderedSet()} />
+  ));

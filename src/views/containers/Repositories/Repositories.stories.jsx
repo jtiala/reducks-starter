@@ -14,13 +14,23 @@ storiesOf('containers/Repositories', module)
     <Repositories
       fetchRepositories={action('fetchRepositories')}
       hasRepositories
+      isFetching={false}
       repositories={repositories}
+    />
+  ))
+  .add('is fetching', () => (
+    <Repositories
+      fetchRepositories={action('fetchRepositories')}
+      hasRepositories={false}
+      isFetching={true}
+      repositories={OrderedSet()}
     />
   ))
   .add('no repositories', () => (
     <Repositories
       fetchRepositories={action('fetchRepositories')}
-      hasRepositories
+      hasRepositories={false}
+      isFetching={false}
       repositories={OrderedSet()}
     />
   ));

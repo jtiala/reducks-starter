@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import { OrderedSet } from 'immutable';
 import styles from './RepositoryList.scss';
 
-const RepositoryList = ({ hasRepositories, repositories }) => (
+const RepositoryList = ({ hasRepositories, isFetching, repositories }) => (
   <div className={styles.root}>
-    {hasRepositories ? (
+    {isFetching ? (
+      <p>Loading...</p>
+    ) : hasRepositories ? (
       <ul>
         {repositories.map((repository) => (
           <li key={`repo-${repository.id}`}>
@@ -23,6 +25,7 @@ const RepositoryList = ({ hasRepositories, repositories }) => (
 
 RepositoryList.propTypes = {
   hasRepositories: PropTypes.bool.isRequired,
+  isFetching: PropTypes.bool.isRequired,
   repositories: PropTypes.instanceOf(OrderedSet).isRequired,
 };
 

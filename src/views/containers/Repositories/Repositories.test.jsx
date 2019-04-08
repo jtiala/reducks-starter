@@ -7,6 +7,7 @@ describe('<Repositories />', () => {
   const props = {
     fetchRepositories: jest.fn(),
     hasRepositories: false,
+    isFetching: false,
     repositories: OrderedSet(),
   };
 

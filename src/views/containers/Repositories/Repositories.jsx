@@ -10,24 +10,30 @@ import { mocks } from '../../../state/apis/github';
 import Button from '../../components/Button';
 import RepositoryList from '../../components/RepositoryList';
 
-export const Repositories = ({ fetchRepositories, hasRepositories, repositories }) => (
+export const Repositories = ({ fetchRepositories, hasRepositories, isFetching, repositories }) => (
   <section>
     <Button onClick={() => fetchRepositories()}>Fetch public repositories from GitHub</Button>
     <Button onClick={() => fetchRepositories(mocks.getRepositoriesSuccess)}>
       Fetch public repositories from GitHub (using a mock)
     </Button>
-    <RepositoryList hasRepositories={hasRepositories} repositories={repositories} />
+    <RepositoryList
+      hasRepositories={hasRepositories}
+      isFetching={isFetching}
+      repositories={repositories}
+    />
   </section>
 );
 
 Repositories.propTypes = {
   fetchRepositories: PropTypes.func.isRequired,
   hasRepositories: PropTypes.bool.isRequired,
+  isFetching: PropTypes.bool.isRequired,
   repositories: PropTypes.instanceOf(OrderedSet).isRequired,
 };
 
 const mapStateToProps = (state) => ({
   hasRepositories: repositoriesSelectors.hasRepositories(state),
+  isFetching: repositoriesSelectors.isFetching(state),
   repositories: repositoriesSelectors.getRepositories(state),
 });
 

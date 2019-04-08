@@ -6,6 +6,7 @@ import RepositoryList from './RepositoryList';
 describe('<RepositoryList />', () => {
   const props = {
     hasRepositories: false,
+    isFetching: false,
     repositories: OrderedSet(),
   };
 
