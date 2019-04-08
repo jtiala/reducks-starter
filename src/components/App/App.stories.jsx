@@ -3,6 +3,6 @@ import { storiesOf } from '@storybook/react';
 import StoryRouter from 'storybook-react-router';
 import { App } from './App';
 
-storiesOf('containers/App', module)
+storiesOf('App', module)
   .addDecorator(StoryRouter())
   .add('default', () => <App />);

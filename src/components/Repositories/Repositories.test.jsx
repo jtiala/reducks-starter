@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { OrderedSet } from 'immutable';
-import { Repositories } from './Repositories';
+import Repositories from './Repositories';
 
 describe('<Repositories />', () => {
   const props = {

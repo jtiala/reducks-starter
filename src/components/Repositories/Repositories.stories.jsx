@@ -3,12 +3,12 @@ import { OrderedSet } from 'immutable';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import StoryRouter from 'storybook-react-router';
-import { mocks, transformers } from '../../../state/apis/github';
-import { Repositories } from './Repositories';
+import { mocks, transformers } from '../../state/apis/github';
+import Repositories from './Repositories';
 
 const repositories = transformers.getRepositories(mocks.getRepositoriesSuccess);
 
-storiesOf('containers/Repositories', module)
+storiesOf('Repositories', module)
   .addDecorator(StoryRouter())
   .add('has repositories', () => (
     <Repositories

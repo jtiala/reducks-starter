@@ -1,24 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import classNames from 'classnames';
-import {
-  selectors as counterSelectors,
-  actions as counterActions,
-  thunks as counterThunks,
-} from '../../../state/modules/counter';
-import Button from '../../components/Button';
+import Button from '../Button';
 import styles from './Counter.scss';
 
-export const Counter = ({
-  count,
-  decrement,
-  increment,
-  isNegative,
-  isPositive,
-  resetAndGotoHome,
-}) => {
-  const counterStyles = classNames(styles.number, {
+const Counter = ({ count, decrement, increment, isNegative, isPositive, resetAndGotoHome }) => {
+  const counterClasses = classNames(styles.number, {
     [styles.positive]: isPositive,
     [styles.negative]: isNegative,
   });
@@ -30,7 +17,7 @@ export const Counter = ({
           ➖
         </span>
       </Button>
-      <span className={counterStyles}>{count}</span>
+      <span className={counterClasses}>{count}</span>
       <Button onClick={increment}>
         <span role="img" aria-label="plus">
           ➕
@@ -52,19 +39,4 @@ Counter.propTypes = {
   resetAndGotoHome: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  count: counterSelectors.getCount(state),
-  isNegative: counterSelectors.isCountNegative(state),
-  isPositive: counterSelectors.isCountPositive(state),
-});
-
-const mapDispatchToProps = {
-  decrement: counterActions.decrement,
-  increment: counterActions.increment,
-  resetAndGotoHome: counterThunks.resetAndGotoHome,
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Counter);
+export default Counter;

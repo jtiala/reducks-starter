@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { Counter } from './Counter';
-import Button from '../../components/Button';
+import Counter from './Counter';
+import Button from '../Button';
 
 describe('<Counter />', () => {
   const props = {

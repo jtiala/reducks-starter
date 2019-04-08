@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Button from './Button';
 
-storiesOf('components/Button', module)
+storiesOf('Button', module)
   .add('with text', () => <Button onClick={action('clicked')}>Reducks Starter</Button>)
   .add('with emoji', () => (
     <Button onClick={action('clicked')}>
