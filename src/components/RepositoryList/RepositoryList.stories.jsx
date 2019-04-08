@@ -11,7 +11,7 @@ storiesOf('RepositoryList', module)
     <RepositoryList hasRepositories isFetching={false} repositories={repositories} />
   ))
   .add('is fetching', () => (
-    <RepositoryList hasRepositories={false} isFetching={true} repositories={OrderedSet()} />
+    <RepositoryList hasRepositories={false} isFetching repositories={OrderedSet()} />
   ))
   .add('no repositories', () => (
     <RepositoryList hasRepositories={false} isFetching={false} repositories={OrderedSet()} />

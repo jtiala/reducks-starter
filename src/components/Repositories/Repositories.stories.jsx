@@ -22,7 +22,7 @@ storiesOf('Repositories', module)
     <Repositories
       fetchRepositories={action('fetchRepositories')}
       hasRepositories={false}
-      isFetching={true}
+      isFetching
       repositories={OrderedSet()}
     />
   ))
