@@ -11,12 +11,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
+const publicPath = process.env.PUBLIC_PATH || '/';
 
 const webpackConfig = {
   entry: ['@babel/polyfill', './src/index.jsx'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    publicPath,
     filename: '[name].[hash].js',
   },
   resolve: {
@@ -81,6 +82,7 @@ const webpackConfig = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html',
+      publicPath,
     }),
     new ScriptExtHtmlWebpackPlugin({ defaultAttribute: 'defer' }),
   ],

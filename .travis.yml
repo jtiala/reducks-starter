@@ -4,6 +4,8 @@ node_js:
 cache:
   directories:
     - node_modules
+env:
+  - PUBLIC_PATH='/reducks-starter/'
 install:
   - yarn install
 script:
