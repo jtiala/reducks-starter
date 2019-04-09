@@ -73,11 +73,7 @@ const webpackConfig = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([
-      {
-        from: 'src/static',
-      },
-    ]),
+    new CopyWebpackPlugin([{ from: 'public' }]),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
       chunkFilename: '[name].[hash].css',
@@ -86,9 +82,7 @@ const webpackConfig = {
       template: './src/index.html',
       filename: './index.html',
     }),
-    new ScriptExtHtmlWebpackPlugin({
-      defaultAttribute: 'defer',
-    }),
+    new ScriptExtHtmlWebpackPlugin({ defaultAttribute: 'defer' }),
   ],
 };
 
@@ -97,7 +91,7 @@ if (isDev) {
   webpackConfig.devServer = {
     hot: true,
     historyApiFallback: true,
-    contentBase: path.join(__dirname, 'src/static'),
+    contentBase: path.join(__dirname, 'public'),
   };
 }
 
