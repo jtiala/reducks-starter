@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router/immutable';
+import './styles/index.scss';
 import store, { browserHistory } from './state/store';
 import App from './components/App';
-import './styles/index.scss';
 
 const Root = () => (
   <Provider store={store}>

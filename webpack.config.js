@@ -2,17 +2,25 @@ const path = require('path');
 const webpack = require('webpack');
 const flexbugs = require('postcss-flexbugs-fixes');
 const postcssPresetEnv = require('postcss-preset-env');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+
+const isDev = process.env.NODE_ENV === 'development';
 
 const webpackConfig = {
   entry: ['@babel/polyfill', './src/index.jsx'],
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'bundle.js',
+    filename: '[name].[hash].js',
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   module: {
     rules: [
@@ -51,8 +59,17 @@ const webpackConfig = {
       },
     ],
   },
-  resolve: {
-    extensions: ['.js', '.jsx'],
+  optimization: {
+    minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()],
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all',
+        },
+      },
+    },
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -61,18 +78,21 @@ const webpackConfig = {
         from: 'src/static',
       },
     ]),
-    new HtmlWebPackPlugin({
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css',
+      chunkFilename: '[name].[hash].css',
+    }),
+    new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html',
-      inject: false,
     }),
-    new MiniCssExtractPlugin({
-      filename: 'styles.css',
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'defer',
     }),
   ],
 };
 
-if (process.env.NODE_ENV === 'development') {
+if (isDev) {
   webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
   webpackConfig.devServer = {
     hot: true,
