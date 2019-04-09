@@ -1,7 +1,7 @@
 {
   "name": "reducks-starter",
   "version": "0.1.0",
-  "description": "Reducks Starter",
+  "description": "Reducks Starter is a highly opinionated React/Redux boilerplate based on the re-ducks approach.",
   "author": "Joonas Tiala <joonas.tiala@gmail.com>",
   "keywords": [
     "starter",
