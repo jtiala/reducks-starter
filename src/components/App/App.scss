@@ -1,6 +1,6 @@
-@import '../../styles/_colors.scss';
-@import '../../styles/_mixins.scss';
-@import '../../styles/_breakpoints.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/breakpoints.scss';
 
 .root {
   @include box-shadow();

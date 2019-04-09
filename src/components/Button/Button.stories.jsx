@@ -17,6 +17,7 @@ storiesOf('Button', module)
       <span role="img" aria-label="Reducks Starter">
         🦆
       </span>
-      <strong>Reducks Starter</strong>
+      <span> | </span>
+      Reducks Starter
     </Button>
   ));
