@@ -41,7 +41,11 @@
     />
     <script>
       if ('serviceWorker' in window.navigator) {
-        window.addEventListener('load', () => window.navigator.serviceWorker.register('/sw.js'));
+        window.addEventListener('load', () =>
+          window.navigator.serviceWorker.register(
+            '<%= htmlWebpackPlugin.options.publicPath %>service-worker.js',
+          ),
+        );
       }
     </script>
   </head>

@@ -9,8 +9,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
+const isProd = process.env.NODE_ENV === 'production';
 const publicPath = process.env.PUBLIC_PATH || '/';
 
 const webpackConfig = {
@@ -87,6 +89,18 @@ const webpackConfig = {
     new ScriptExtHtmlWebpackPlugin({ defaultAttribute: 'defer' }),
   ],
 };
+
+if (isProd) {
+  webpackConfig.plugins.push(
+    new SWPrecacheWebpackPlugin({
+      cacheId: 'reducks-starter',
+      minify: true,
+      navigateFallback: publicPath,
+      dontCacheBustUrlsMatching: /\.\w{8}\./,
+      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+    }),
+  );
+}
 
 if (isDev) {
   webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
