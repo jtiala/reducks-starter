@@ -2,7 +2,6 @@ import { Record } from 'immutable';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { combineReducers } from 'redux-immutable';
 import thunkMiddleware from 'redux-thunk';
-import loggerMiddleware from 'redux-logger';
 import { connectRouter, routerMiddleware } from 'connected-react-router/immutable';
 import browserHistory from './history';
 import restMiddleware from './middleware/rest';
@@ -26,14 +25,10 @@ export const configureStore = (initialState = StoreRecord()) => {
   const enhancers = [];
   const middleware = [routerMiddleware(browserHistory), restMiddleware, thunkMiddleware];
 
-  if (process.env.NODE_ENV === 'development') {
-    const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;
+  const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;
 
-    if (typeof devToolsExtension === 'function') {
-      enhancers.push(devToolsExtension());
-    } else {
-      middleware.push(loggerMiddleware);
-    }
+  if (typeof devToolsExtension === 'function') {
+    enhancers.push(devToolsExtension());
   }
 
   const composedEnhancers = compose(
