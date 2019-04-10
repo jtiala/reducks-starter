@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import StoryRouter from 'storybook-react-router';
 import { action } from '@storybook/addon-actions';
 import Counter from './Counter';
 
@@ -14,7 +13,6 @@ const props = {
 };
 
 storiesOf('Counter', module)
-  .addDecorator(StoryRouter())
   .add('default', () => <Counter {...props} />)
   .add('isNegative', () => <Counter {...props} count={-1} isNegative />)
   .add('isPositive', () => <Counter {...props} count={1} isPositive />);
