@@ -5,13 +5,12 @@ import thunkMiddleware from 'redux-thunk';
 import loggerMiddleware from 'redux-logger';
 import { connectRouter, routerMiddleware } from 'connected-react-router/immutable';
 import { createBrowserHistory } from 'history';
-import { publicPath } from './utils/paths';
 import restMiddleware from './middleware/rest';
 import counter, { records as counterRecords } from './modules/counter';
 import repositories, { records as repositoriesRecords } from './modules/repositories';
 
 export const browserHistory = createBrowserHistory({
-  basename: publicPath,
+  basename: process.env.PUBLIC_PATH,
 });
 
 export const moduleReducers = {

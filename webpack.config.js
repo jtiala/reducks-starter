@@ -87,6 +87,10 @@ const webpackConfig = {
       publicPath,
     }),
     new ScriptExtHtmlWebpackPlugin({ defaultAttribute: 'defer' }),
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: 'production',
+      PUBLIC_PATH: '/',
+    }),
   ],
 };
 
