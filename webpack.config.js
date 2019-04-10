@@ -35,7 +35,12 @@ const webpackConfig = {
       {
         test: /\.(css|scss)$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: isDev,
+            },
+          },
           {
             loader: 'css-loader',
             options: {
@@ -78,8 +83,8 @@ const webpackConfig = {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([{ from: 'public' }]),
     new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
-      chunkFilename: '[name].[hash].css',
+      filename: isDev ? '[name].css' : '[name].[hash].css',
+      chunkFilename: isDev ? '[name].css' : '[name].[hash].css',
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
