@@ -97,7 +97,7 @@ if (isProd) {
       minify: true,
       navigateFallback: publicPath,
       dontCacheBustUrlsMatching: /\.\w{8}\./,
-      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+      staticFileGlobsIgnorePatterns: [/\.map$/],
     }),
   );
 }
