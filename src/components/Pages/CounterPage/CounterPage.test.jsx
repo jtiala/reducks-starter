@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Counter from './Counter';
-import Button from '../Button';
+import CounterPage from './CounterPage';
+import Button from '../../Common/Button';
 
-describe('<Counter />', () => {
+describe('<CounterPage />', () => {
   const props = {
     count: 0,
     decrement: jest.fn(),
@@ -14,19 +14,19 @@ describe('<Counter />', () => {
   };
 
   it('renders without crashing', () => {
-    const wrapper = shallow(<Counter {...props} />);
+    const wrapper = shallow(<CounterPage {...props} />);
 
     expect(wrapper.exists()).toBe(true);
   });
 
   it('displays correct count', () => {
-    const wrapper = shallow(<Counter {...props} />);
+    const wrapper = shallow(<CounterPage {...props} />);
 
     expect(wrapper.find('.number').text()).toBe(String(props.count));
   });
 
   it('calls onClick handlers', () => {
-    const wrapper = mount(<Counter {...props} />);
+    const wrapper = mount(<CounterPage {...props} />);
     const buttons = wrapper.find(Button);
 
     buttons.at(0).simulate('click');

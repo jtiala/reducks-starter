@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import Counter from './Counter';
+import CounterPage from './CounterPage';
 
 const props = {
   count: 0,
@@ -12,7 +12,7 @@ const props = {
   resetAndGotoHome: action('resetAndGotoHome'),
 };
 
-storiesOf('Counter', module)
-  .add('default', () => <Counter {...props} />)
-  .add('isNegative', () => <Counter {...props} count={-1} isNegative />)
-  .add('isPositive', () => <Counter {...props} count={1} isPositive />);
+storiesOf('Pages/CounterPage', module)
+  .add('default', () => <CounterPage {...props} />)
+  .add('isNegative', () => <CounterPage {...props} count={-1} isNegative />)
+  .add('isPositive', () => <CounterPage {...props} count={1} isPositive />);

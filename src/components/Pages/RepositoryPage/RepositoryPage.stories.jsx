@@ -2,8 +2,8 @@ import React from 'react';
 import { OrderedSet } from 'immutable';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { mocks, transformers } from '../../state/apis/github';
-import Repositories from './Repositories';
+import { mocks, transformers } from '../../../state/apis/github';
+import RepositoryPage from './RepositoryPage';
 
 const props = {
   fetchRepositories: action('fetchRepositories'),
@@ -12,9 +12,9 @@ const props = {
   repositories: transformers.getRepositories(mocks.getRepositoriesSuccess),
 };
 
-storiesOf('Repositories', module)
-  .add('default', () => <Repositories {...props} />)
-  .add('is fetching', () => <Repositories {...props} isFetching />)
+storiesOf('Pages/RepositoryPage', module)
+  .add('default', () => <RepositoryPage {...props} />)
+  .add('is fetching', () => <RepositoryPage {...props} isFetching />)
   .add('no repositories', () => (
-    <Repositories {...props} hasRepositories={false} repositories={OrderedSet()} />
+    <RepositoryPage {...props} hasRepository={false} repositories={OrderedSet()} />
   ));

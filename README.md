@@ -48,12 +48,61 @@ Like stated before, this is boilerplate with the features and structure I like t
 
 <!--
 To generate this, use
-tree --dirsfirst -I 'node_modules|coverage|LICENSE|README.md|*config.js|package.json|yarn.lock|*.png|*.ico'
+tree --dirsfirst -I 'dist|public|node_modules|coverage|LICENSE|README.md|*config.js|package.json|yarn.lock|*.png|*.ico'
 -->
 
 ```
 .
 └── src
+    ├── components
+    │   ├── App
+    │   │   ├── Header
+    │   │   │   ├── Navigation
+    │   │   │   │   ├── Navigation.jsx
+    │   │   │   │   ├── Navigation.scss
+    │   │   │   │   ├── Navigation.stories.jsx
+    │   │   │   │   ├── Navigation.test.jsx
+    │   │   │   │   └── index.js
+    │   │   │   ├── Header.jsx
+    │   │   │   ├── Header.stories.jsx
+    │   │   │   ├── Header.test.jsx
+    │   │   │   └── index.js
+    │   │   ├── App.jsx
+    │   │   ├── App.scss
+    │   │   ├── App.stories.jsx
+    │   │   ├── App.test.jsx
+    │   │   └── index.js
+    │   ├── Common
+    │   │   └── Button
+    │   │       ├── Button.jsx
+    │   │       ├── Button.scss
+    │   │       ├── Button.stories.jsx
+    │   │       ├── Button.test.jsx
+    │   │       └── index.js
+    │   └── Pages
+    │       ├── CounterPage
+    │       │   ├── CounterPage.jsx
+    │       │   ├── CounterPage.scss
+    │       │   ├── CounterPage.stories.jsx
+    │       │   ├── CounterPage.test.jsx
+    │       │   └── index.js
+    │       ├── HomePage
+    │       │   ├── HomePage.jsx
+    │       │   ├── HomePage.scss
+    │       │   ├── HomePage.stories.jsx
+    │       │   ├── HomePage.test.jsx
+    │       │   └── index.js
+    │       └── RepositoryPage
+    │           ├── RepositoryList
+    │           │   ├── RepositoryList.jsx
+    │           │   ├── RepositoryList.scss
+    │           │   ├── RepositoryList.stories.jsx
+    │           │   ├── RepositoryList.test.jsx
+    │           │   └── index.js
+    │           ├── RepositoryPage.jsx
+    │           ├── RepositoryPage.stories.jsx
+    │           ├── RepositoryPage.test.jsx
+    │           └── index.js
     ├── state
     │   ├── apis
     │   │   └── github
@@ -83,68 +132,17 @@ tree --dirsfirst -I 'node_modules|coverage|LICENSE|README.md|*config.js|package.
     │   │       └── types.js
     │   ├── utils
     │   │   └── actions.js
+    │   ├── history.js
     │   └── store.js
-    ├── static
-    │   ├── icons
-    │   ├── manifest.json
-    │   └── sw.js
-    ├── views
-    │   ├── components
-    │   │   ├── Button
-    │   │   │   ├── Button.jsx
-    │   │   │   ├── Button.scss
-    │   │   │   ├── Button.stories.jsx
-    │   │   │   ├── Button.test.jsx
-    │   │   │   └── index.js
-    │   │   ├── Header
-    │   │   │   ├── Header.jsx
-    │   │   │   ├── Header.stories.jsx
-    │   │   │   ├── Header.test.jsx
-    │   │   │   └── index.js
-    │   │   ├── Navigation
-    │   │   │   ├── Navigation.jsx
-    │   │   │   ├── Navigation.scss
-    │   │   │   ├── Navigation.stories.jsx
-    │   │   │   ├── Navigation.test.jsx
-    │   │   │   └── index.js
-    │   │   └── RepositoryList
-    │   │       ├── RepositoryList.jsx
-    │   │       ├── RepositoryList.scss
-    │   │       ├── RepositoryList.stories.jsx
-    │   │       ├── RepositoryList.test.jsx
-    │   │       └── index.js
-    │   ├── containers
-    │   │   ├── App
-    │   │   │   ├── App.jsx
-    │   │   │   ├── App.scss
-    │   │   │   ├── App.stories.jsx
-    │   │   │   ├── App.test.jsx
-    │   │   │   └── index.js
-    │   │   ├── Counter
-    │   │   │   ├── Counter.jsx
-    │   │   │   ├── Counter.scss
-    │   │   │   ├── Counter.stories.jsx
-    │   │   │   ├── Counter.test.jsx
-    │   │   │   └── index.js
-    │   │   ├── Home
-    │   │   │   ├── Home.jsx
-    │   │   │   ├── Home.scss
-    │   │   │   ├── Home.stories.jsx
-    │   │   │   ├── Home.test.jsx
-    │   │   │   └── index.js
-    │   │   └── Repositories
-    │   │       ├── Repositories.jsx
-    │   │       ├── Repositories.stories.jsx
-    │   │       ├── Repositories.test.jsx
-    │   │       └── index.js
-    │   └── styles
-    │       ├── _breakpoints.scss
-    │       ├── _colors.scss
-    │       ├── _globals.scss
-    │       └── _mixins.scss
+    ├── styles
+    │   ├── breakpoints.scss
+    │   ├── colors.scss
+    │   ├── globals.scss
+    │   ├── index.scss
+    │   └── mixins.scss
+    ├── utils
     ├── index.html
     ├── index.jsx
-    ├── index.scss
     └── setupTests.js
 ```
 

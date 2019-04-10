@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { OrderedSet } from 'immutable';
-import Repositories from './Repositories';
+import RepositoryPage from './RepositoryPage';
 
-describe('<Repositories />', () => {
+describe('<RepositoryPage />', () => {
   const props = {
     fetchRepositories: jest.fn(),
     hasRepositories: false,
@@ -12,7 +12,7 @@ describe('<Repositories />', () => {
   };
 
   it('renders without crashing', () => {
-    const wrapper = shallow(<Repositories {...props} />);
+    const wrapper = shallow(<RepositoryPage {...props} />);
 
     expect(wrapper.exists()).toBe(true);
   });

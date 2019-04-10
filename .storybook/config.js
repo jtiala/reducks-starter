@@ -7,9 +7,9 @@ import './storybook.scss';
 // Use StoryRouter in all stories
 addDecorator(
   StoryRouter({
-    '/': linkTo('App', 'default'),
-    '/counter': linkTo('Counter', 'default'),
-    '/repositories': linkTo('Repositories', 'default'),
+    '/': linkTo('Pages/HomePage', 'default'),
+    '/counter': linkTo('Pages/CounterPage', 'default'),
+    '/repositories': linkTo('Pages/RepositoryPage', 'default'),
   }),
 );
 

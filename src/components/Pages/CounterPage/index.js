@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { selectors, actions, thunks } from '../../state/modules/counter';
-import Counter from './Counter';
+import { selectors, actions, thunks } from '../../../state/modules/counter';
+import CounterPage from './CounterPage';
 
 const mapStateToProps = (state) => ({
   count: selectors.getCount(state),
@@ -14,10 +14,10 @@ const mapDispatchToProps = {
   resetAndGotoHome: thunks.resetAndGotoHome,
 };
 
-const ConnectedCounter = connect(
+const ConnectedCounterPage = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Counter);
+)(CounterPage);
 
-export default Counter;
-export { ConnectedCounter };
+export default CounterPage;
+export { ConnectedCounterPage };

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Button from '../Button';
-import styles from './Counter.scss';
+import Button from '../../Common/Button';
+import styles from './CounterPage.scss';
 
-const Counter = ({ count, decrement, increment, isNegative, isPositive, resetAndGotoHome }) => {
+const CounterPage = ({ count, decrement, increment, isNegative, isPositive, resetAndGotoHome }) => {
   const counterClasses = classNames(styles.number, {
     [styles.positive]: isPositive,
     [styles.negative]: isNegative,
@@ -30,7 +30,7 @@ const Counter = ({ count, decrement, increment, isNegative, isPositive, resetAnd
   );
 };
 
-Counter.propTypes = {
+CounterPage.propTypes = {
   count: PropTypes.number.isRequired,
   decrement: PropTypes.func.isRequired,
   increment: PropTypes.func.isRequired,
@@ -39,4 +39,4 @@ Counter.propTypes = {
   resetAndGotoHome: PropTypes.func.isRequired,
 };
 
-export default Counter;
+export default CounterPage;

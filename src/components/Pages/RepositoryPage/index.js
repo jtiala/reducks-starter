@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { selectors, actions } from '../../state/modules/repositories';
-import Repositories from './Repositories';
+import { selectors, actions } from '../../../state/modules/repositories';
+import RepositoryPage from './RepositoryPage';
 
 const mapStateToProps = (state) => ({
   hasRepositories: selectors.hasRepositories(state),
@@ -12,10 +12,10 @@ const mapDispatchToProps = {
   fetchRepositories: actions.fetchRepositories,
 };
 
-const ConnectedRepositories = connect(
+const ConnectedRepositoryPage = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Repositories);
+)(RepositoryPage);
 
-export default Repositories;
-export { ConnectedRepositories };
+export default RepositoryPage;
+export { ConnectedRepositoryPage };

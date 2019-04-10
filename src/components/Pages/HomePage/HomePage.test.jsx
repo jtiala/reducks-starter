@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Home from './Home';
+import HomePage from './HomePage';
 
-describe('<Home />', () => {
+describe('<HomePage />', () => {
   it('renders without crashing', () => {
-    const wrapper = shallow(<Home />);
+    const wrapper = shallow(<HomePage />);
 
     expect(wrapper.exists()).toBe(true);
   });
