@@ -12,7 +12,6 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
-const isProd = process.env.NODE_ENV === 'production';
 const publicPath = process.env.PUBLIC_PATH || '/';
 
 const webpackConfig = {
@@ -96,11 +95,6 @@ const webpackConfig = {
       NODE_ENV: 'production',
       PUBLIC_PATH: '/',
     }),
-  ],
-};
-
-if (isProd) {
-  webpackConfig.plugins.push(
     new SWPrecacheWebpackPlugin({
       cacheId: 'reducks-starter',
       minify: true,
@@ -108,8 +102,8 @@ if (isProd) {
       dontCacheBustUrlsMatching: /\.\w{8}\./,
       staticFileGlobsIgnorePatterns: [/\.map$/],
     }),
-  );
-}
+  ],
+};
 
 if (isDev) {
   webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
