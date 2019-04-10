@@ -2,13 +2,20 @@ const flexbugs = require('postcss-flexbugs-fixes');
 const postcssPresetEnv = require('postcss-preset-env');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const isDev = process.env.NODE_ENV === 'development';
+
 module.exports = {
   module: {
     rules: [
       {
         test: /\.(css|scss)$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: isDev,
+            },
+          },
           {
             loader: 'css-loader',
             options: {
@@ -37,7 +44,8 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles.css',
+      filename: isDev ? '[name].css' : '[name].[hash].css',
+      chunkFilename: isDev ? '[name].css' : '[name].[hash].css',
     }),
   ],
 };
