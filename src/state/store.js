@@ -4,19 +4,10 @@ import { combineReducers } from 'redux-immutable';
 import thunkMiddleware from 'redux-thunk';
 import loggerMiddleware from 'redux-logger';
 import { connectRouter, routerMiddleware } from 'connected-react-router/immutable';
-import { createBrowserHistory } from 'history';
+import browserHistory from './history';
 import restMiddleware from './middleware/rest';
 import counter, { records as counterRecords } from './modules/counter';
 import repositories, { records as repositoriesRecords } from './modules/repositories';
-
-export const browserHistory = createBrowserHistory({
-  basename: process.env.PUBLIC_PATH,
-});
-
-export const moduleReducers = {
-  counter,
-  repositories,
-};
 
 export const StoreRecord = Record({
   counter: counterRecords.Counter(),
@@ -24,16 +15,14 @@ export const StoreRecord = Record({
   router: undefined,
 });
 
-export const createRootReducer = (history, reducers, defaultState) =>
-  combineReducers(
-    {
-      router: connectRouter(history),
-      ...reducers,
-    },
-    defaultState,
-  );
-
 export const configureStore = (initialState = StoreRecord()) => {
+  const reducers = {
+    router: connectRouter(browserHistory),
+    counter,
+    repositories,
+  };
+
+  const rootReducer = combineReducers(reducers, initialState);
   const enhancers = [];
   const middleware = [routerMiddleware(browserHistory), restMiddleware, thunkMiddleware];
 
@@ -51,8 +40,6 @@ export const configureStore = (initialState = StoreRecord()) => {
     applyMiddleware(...middleware),
     ...enhancers,
   );
-
-  const rootReducer = createRootReducer(browserHistory, moduleReducers, StoreRecord);
 
   return createStore(rootReducer, initialState, composedEnhancers);
 };
