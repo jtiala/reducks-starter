@@ -1,4 +1,4 @@
-module.exports = function(api) {
+module.exports = function config(api) {
   const isTest = api.env('test');
 
   // Target current node version when in test environment
