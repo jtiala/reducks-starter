@@ -140,7 +140,6 @@ tree --dirsfirst -I 'dist|public|node_modules|coverage|LICENSE|README.md|*config
     │   ├── globals.scss
     │   ├── index.scss
     │   └── mixins.scss
-    ├── utils
     ├── index.html
     ├── index.jsx
     └── setupTests.js
