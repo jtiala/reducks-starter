@@ -77,8 +77,11 @@ workflows:
     jobs:
       - setup
       - build:
-          requires: setup
+          requires:
+            - setup
       - test:
-          requires: setup
+          requires:
+            - setup
       - lint:
-          requires: setup
+          requires:
+            - setup
