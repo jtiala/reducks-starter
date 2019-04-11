@@ -3,7 +3,7 @@ version: 2
 jobs:
   setup:
     docker:
-    - image: circleci/node:latest
+      - image: circleci/node:latest
     steps:
       - checkout
       - run:
@@ -35,38 +35,41 @@ jobs:
       - image: circleci/node:latest
     environment:
       - PUBLIC_PATH: '/reducks-starter/'
-    - attach_workspace:
-        at: .
-    - run:
-        name: build
-        command: yarn build
-    - persist_to_workspace:
-        root: .
-        paths:
-          - dist
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: build
+          command: yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - dist
   test:
     docker:
       - image: circleci/node:latest
-    - attach_workspace:
-        at: .
-    - run:
-        name: run tests
-        command: yarn test:ci
-    - store_test_results:
-        path: junit.xml
-    - persist_to_workspace:
-        root: .
-        paths:
-          - coverage
-          - junit.xml
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: run tests
+          command: yarn test:ci
+      - store_test_results:
+          path: junit.xml
+      - persist_to_workspace:
+          root: .
+          paths:
+            - coverage
+            - junit.xml
   lint:
     docker:
       - image: circleci/node:latest
-    - attach_workspace:
-        at: .
-    - run:
-        name: run linters
-        command: yarn lint
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: run linters
+          command: yarn lint
 
 workflows:
   version: 2
