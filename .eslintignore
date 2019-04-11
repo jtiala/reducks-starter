@@ -21,6 +21,7 @@ node_modules
 # Tests
 coverage
 .nyc_output
+junit.xml
 
 # Dotenv configuration
 .env
