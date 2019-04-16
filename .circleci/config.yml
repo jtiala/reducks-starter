@@ -34,7 +34,7 @@ jobs:
     docker:
       - image: circleci/node:latest
     environment:
-      - PUBLIC_PATH: '/reducks-starter/'
+      - PUBLIC_PATH: ${PUBLIC_PATH}
     steps:
       - checkout
       - attach_workspace:
@@ -73,18 +73,55 @@ jobs:
       - run:
           name: Run linters
           command: yarn lint
+  deploy:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Install gh-pages
+          command: npm install -g gh-pages
+      - run:
+          name: Configure Git
+          command: |
+            git config user.name "${GH_NAME}"
+            git config user.email "${GH_EMAIL}"
+      - run:
+          name: Deploy to GitHub Pages
+          command: gh-pages -d dist -m 'Deploy from CircleCI'
 
 workflows:
   version: 2
-  build_test_lint:
+  build_test_lint_deploy:
     jobs:
       - setup
+          branches:
+            ignore:
+              - gh-pages
       - build:
+          branches:
+            ignore:
+              - gh-pages
           requires:
             - setup
       - test:
+          branches:
+            ignore:
+              - gh-pages
           requires:
             - setup
       - lint:
+          branches:
+            ignore:
+              - gh-pages
           requires:
             - setup
+      - deploy:
+          branches:
+            ignore:
+              - gh-pages
+          requires:
+            - build
+            - test
+            - lint
