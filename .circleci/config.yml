@@ -83,30 +83,18 @@ jobs:
           name: Install gh-pages
           command: npm install gh-pages
       - run:
-          name: Configure Git
-          command: |
-            git config user.name "${GH_NAME}"
-            git config user.email "${GH_EMAIL}"
-      - run:
           name: Deploy to GitHub Pages
-          command: ./node_modules/gh-pages/bin/gh-pages.js -d dist -m 'Deploy from CircleCI'
+          command: ./node_modules/gh-pages/bin/gh-pages.js -u '${GH_NAME} <${GH_EMAIL}>' -d dist -m 'Deploy from CircleCI'
 
 workflows:
   version: 2
-  build_test_lint_deploy:
+  test_lint_build_deploy:
     jobs:
       - setup:
           filters:
             branches:
               ignore:
                 - gh-pages
-      - build:
-          filters:
-            branches:
-              ignore:
-                - gh-pages
-          requires:
-            - setup
       - test:
           filters:
             branches:
@@ -121,6 +109,14 @@ workflows:
                 - gh-pages
           requires:
             - setup
+      - build:
+          filters:
+            branches:
+              ignore:
+                - gh-pages
+          requires:
+            - test
+            - lint
       - deploy:
           filters:
             branches:
@@ -128,5 +124,3 @@ workflows:
                 - gh-pages
           requires:
             - build
-            - test
-            - lint
