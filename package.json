@@ -37,7 +37,8 @@
     "lint:styles:fix": "stylelint src/**/*.{css,scss} --fix",
     "lint:other": "prettier --list-different '**/*.{md,json,yml,yaml}'",
     "format": "prettier --write '**/*.{js,jsx,css,scss,html,md,json,yml,yaml}'",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "deploy": "./scripts/deploy-gh-pages.sh"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.3",
