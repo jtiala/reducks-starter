@@ -81,7 +81,7 @@ jobs:
           at: .
       - run:
           name: Install gh-pages
-          command: npm install -g gh-pages
+          command: npm install gh-pages
       - run:
           name: Configure Git
           command: |
@@ -89,7 +89,7 @@ jobs:
             git config user.email "${GH_EMAIL}"
       - run:
           name: Deploy to GitHub Pages
-          command: gh-pages -d dist -m 'Deploy from CircleCI'
+          command: ./node_modules/gh-pages/bin/gh-pages.js -d dist -m 'Deploy from CircleCI'
 
 workflows:
   version: 2
