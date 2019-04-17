@@ -85,7 +85,7 @@ jobs:
           at: .
       - run:
           name: Deploy to GitHub Pages
-          command: yarn deploy -m 'Deploy from CircleCI'
+          command: yarn deploy -m "Deploy from CircleCI"
 
 workflows:
   version: 2

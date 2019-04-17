@@ -47,7 +47,7 @@ git stash
 git branch --delete --force $TARGET_BRANCH
 git checkout --orphan $TARGET_BRANCH
 git add -f $DIST
-git commit -m $COMMIT_MESSAGE
+git commit -m "$COMMIT_MESSAGE"
 git filter-branch -f --prune-empty --subdirectory-filter $DIST
 git push -f origin $TARGET_BRANCH
 git checkout $MAIN_BRANCH
