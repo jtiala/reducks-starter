@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function usage() {
+function usage {
   echo "Usage: $0 [-bhm] [FOLDER]\n"
   echo "Deploy FOLDER to GitHub Pages.\n"
   echo "  -b TARGET_BRANCH   GitHub pages branch. Default: gh-pages"
@@ -9,10 +9,12 @@ function usage() {
   echo "\nIf GH_NAME or GH_EMAIL environment variables are set, they will replace git config user.name and user.email. Useful for CI."
 }
 
-OPTIND=1
+# Default values
 TARGET_BRANCH="gh-pages"
 COMMIT_MESSAGE="Deploy"
 
+# Read opts
+OPTIND=1
 while getopts hb:m: opt; do
   case $opt in
   h)
@@ -43,6 +45,7 @@ MAIN_BRANCH=$(git symbolic-ref --short HEAD)
 [ ! -z "$GH_NAME" ] && git config user.name "$GH_NAME"
 [ ! -z "$GH_EMAIL" ] && git config user.email "$GH_EMAIL"
 
+# Push the FOLDER to the TARGET_BRANCH on origin
 git stash
 git branch --delete --force $TARGET_BRANCH
 git checkout --orphan $TARGET_BRANCH
