@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function usage {
+usage() {
   echo "Usage: $0 [-bhm] [FOLDER]\n"
   echo "Deploy FOLDER to GitHub Pages.\n"
   echo "  -b TARGET_BRANCH   GitHub pages branch. Default: gh-pages"
