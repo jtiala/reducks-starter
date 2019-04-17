@@ -4,8 +4,7 @@ import { StoreRecord } from '../../store';
 import { apiRequestType, apiSuccessType, apiFailureType } from '../../utils/actions';
 
 describe('Repositories', () => {
-  const getRepositoriesSuccessPayload = transformers.getRepositories(mocks.getRepositoriesSuccess);
-  const getRepositoriesFailurePayload = mocks.getRepositoriesSuccess;
+  const payload = transformers.getRepositories(mocks.getRepositories);
 
   describe('data', () => {
     test('Initial state', () => {
@@ -23,21 +22,21 @@ describe('Repositories', () => {
     test(apiSuccessType(types.FETCH_REPOSITORIES), () => {
       const state = reducer(initialState, {
         type: apiSuccessType(types.FETCH_REPOSITORIES),
-        payload: getRepositoriesSuccessPayload,
+        payload,
       });
 
       const store = StoreRecord({
         repositories: state,
       });
 
-      expect(selectors.getRepositories(store).size).toBe(mocks.getRepositoriesSuccess.length);
+      expect(selectors.getRepositories(store).size).toBe(mocks.getRepositories.length);
       expect(selectors.hasRepositories(store)).toBe(true);
     });
 
     test(apiFailureType(types.FETCH_REPOSITORIES), () => {
       const state = reducer(initialState, {
         type: apiFailureType(types.FETCH_REPOSITORIES),
-        payload: getRepositoriesFailurePayload,
+        payload: null,
       });
 
       const store = StoreRecord({
@@ -51,7 +50,7 @@ describe('Repositories', () => {
     test(types.CLEAR, () => {
       let state = reducer(
         records.Repositories({
-          data: getRepositoriesSuccessPayload,
+          data: payload,
         }),
       );
 
@@ -101,7 +100,7 @@ describe('Repositories', () => {
     test(apiSuccessType(types.FETCH_REPOSITORIES), () => {
       const state = reducer(initialState, {
         type: apiSuccessType(types.FETCH_REPOSITORIES),
-        payload: getRepositoriesSuccessPayload,
+        payload,
       });
 
       const store = StoreRecord({
@@ -116,7 +115,7 @@ describe('Repositories', () => {
     test(apiFailureType(types.FETCH_REPOSITORIES), () => {
       const state = reducer(initialState, {
         type: apiFailureType(types.FETCH_REPOSITORIES),
-        payload: getRepositoriesFailurePayload,
+        payload: null,
       });
 
       const store = StoreRecord({
@@ -131,7 +130,7 @@ describe('Repositories', () => {
     test(types.CLEAR, () => {
       let state = reducer(initialState, {
         type: apiFailureType(types.FETCH_REPOSITORIES),
-        payload: getRepositoriesFailurePayload,
+        payload: null,
       });
 
       let store = StoreRecord({

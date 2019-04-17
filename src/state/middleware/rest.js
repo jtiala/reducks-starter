@@ -1,4 +1,3 @@
-import fetchMock from 'fetch-mock';
 import { apiRequestType, apiSuccessType, apiFailureType } from '../utils/actions';
 
 export default ({ dispatch }) => (next) => async (action) => {
@@ -6,20 +5,12 @@ export default ({ dispatch }) => (next) => async (action) => {
     return next(action);
   }
 
-  const { url, options = { method: 'GET' }, transformer, mock } = action.meta.rest;
+  const { url, options = { method: 'GET' }, transformer } = action.meta.rest;
 
   dispatch({ type: apiRequestType(action.type) });
 
   try {
-    if (mock) {
-      fetchMock[options.method.toLowerCase()](url, mock);
-    }
-
     const response = await fetch(url, options);
-
-    if (mock) {
-      fetchMock.restore();
-    }
 
     if (!response.ok) {
       throw response;

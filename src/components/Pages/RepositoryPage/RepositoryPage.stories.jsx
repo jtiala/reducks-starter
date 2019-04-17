@@ -9,7 +9,7 @@ const props = {
   fetchRepositories: action('fetchRepositories'),
   hasRepositories: true,
   isFetching: false,
-  repositories: transformers.getRepositories(mocks.getRepositoriesSuccess),
+  repositories: transformers.getRepositories(mocks.getRepositories),
 };
 
 storiesOf('Pages/RepositoryPage', module)

@@ -1,5 +1,5 @@
 // Response from GET https://api.github.com/repositories
-export const getRepositoriesSuccess = [
+export const getRepositories = [
   {
     id: 1,
     node_id: 'MDEwOlJlcG9zaXRvcnkx',
@@ -138,5 +138,3 @@ export const getRepositoriesSuccess = [
     deployments_url: 'https://api.github.com/repos/wycats/merb-core/deployments',
   },
 ];
-
-export const getRepositoriesFailure = 'Internal Server Error';

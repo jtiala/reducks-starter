@@ -35,7 +35,7 @@ Like stated before, this is boilerplate with the features and structure I like t
 - [React v16][react] with [React Router v5][react-router]
 - [Redux v5][redux] with [Immutable.js v4][immutable] based store tree, side effects with [redux-thunk][redux-thunk]
 - [Re-ducks][re-ducks] inspired modules
-- Custom REST API middleware completed with mocking and transforming functionalities
+- Custom REST API middleware
 - [CSS Modules][css-modules] with [Sass][sass]
 - Tests with [Jest][jest] and [Enzyme][enzyme]
 - Next generation JavaScript with [Babel v7][babel]
@@ -48,101 +48,100 @@ Like stated before, this is boilerplate with the features and structure I like t
 
 <!--
 To generate this, use
-tree --dirsfirst -I 'dist|public|node_modules|coverage|LICENSE|README.md|*config.js|package.json|yarn.lock|*.png|*.ico'
+tree --dirsfirst src'
 -->
 
 ```
-.
-└── src
-    ├── components
-    │   ├── App
-    │   │   ├── Header
-    │   │   │   ├── Navigation
-    │   │   │   │   ├── Navigation.jsx
-    │   │   │   │   ├── Navigation.scss
-    │   │   │   │   ├── Navigation.stories.jsx
-    │   │   │   │   ├── Navigation.test.jsx
-    │   │   │   │   └── index.js
-    │   │   │   ├── Header.jsx
-    │   │   │   ├── Header.stories.jsx
-    │   │   │   ├── Header.test.jsx
-    │   │   │   └── index.js
-    │   │   ├── App.jsx
-    │   │   ├── App.scss
-    │   │   ├── App.stories.jsx
-    │   │   ├── App.test.jsx
-    │   │   └── index.js
-    │   ├── Common
-    │   │   └── Button
-    │   │       ├── Button.jsx
-    │   │       ├── Button.scss
-    │   │       ├── Button.stories.jsx
-    │   │       ├── Button.test.jsx
-    │   │       └── index.js
-    │   └── Pages
-    │       ├── CounterPage
-    │       │   ├── CounterPage.jsx
-    │       │   ├── CounterPage.scss
-    │       │   ├── CounterPage.stories.jsx
-    │       │   ├── CounterPage.test.jsx
-    │       │   └── index.js
-    │       ├── HomePage
-    │       │   ├── HomePage.jsx
-    │       │   ├── HomePage.scss
-    │       │   ├── HomePage.stories.jsx
-    │       │   ├── HomePage.test.jsx
-    │       │   └── index.js
-    │       └── RepositoryPage
-    │           ├── RepositoryList
-    │           │   ├── RepositoryList.jsx
-    │           │   ├── RepositoryList.scss
-    │           │   ├── RepositoryList.stories.jsx
-    │           │   ├── RepositoryList.test.jsx
-    │           │   └── index.js
-    │           ├── RepositoryPage.jsx
-    │           ├── RepositoryPage.stories.jsx
-    │           ├── RepositoryPage.test.jsx
-    │           └── index.js
-    ├── state
-    │   ├── apis
-    │   │   └── github
-    │   │       ├── index.js
-    │   │       ├── mocks.js
-    │   │       ├── requests.js
-    │   │       └── transformers.js
-    │   ├── middleware
-    │   │   └── rest.js
-    │   ├── modules
-    │   │   ├── counter
-    │   │   │   ├── actions.js
-    │   │   │   ├── index.js
-    │   │   │   ├── records.js
-    │   │   │   ├── reducers.js
-    │   │   │   ├── selectors.js
-    │   │   │   ├── test.js
-    │   │   │   ├── thunks.js
-    │   │   │   └── types.js
-    │   │   └── repositories
-    │   │       ├── actions.js
-    │   │       ├── index.js
-    │   │       ├── records.js
-    │   │       ├── reducers.js
-    │   │       ├── selectors.js
-    │   │       ├── test.js
-    │   │       └── types.js
-    │   ├── utils
-    │   │   └── actions.js
-    │   ├── history.js
-    │   └── store.js
-    ├── styles
-    │   ├── breakpoints.scss
-    │   ├── colors.scss
-    │   ├── globals.scss
-    │   ├── index.scss
-    │   └── mixins.scss
-    ├── index.html
-    ├── index.jsx
-    └── setupTests.js
+src
+├── components
+│   ├── App
+│   │   ├── Header
+│   │   │   ├── Navigation
+│   │   │   │   ├── Navigation.jsx
+│   │   │   │   ├── Navigation.scss
+│   │   │   │   ├── Navigation.stories.jsx
+│   │   │   │   ├── Navigation.test.jsx
+│   │   │   │   └── index.js
+│   │   │   ├── Header.jsx
+│   │   │   ├── Header.stories.jsx
+│   │   │   ├── Header.test.jsx
+│   │   │   └── index.js
+│   │   ├── App.jsx
+│   │   ├── App.scss
+│   │   ├── App.stories.jsx
+│   │   ├── App.test.jsx
+│   │   └── index.js
+│   ├── Common
+│   │   └── Button
+│   │       ├── Button.jsx
+│   │       ├── Button.scss
+│   │       ├── Button.stories.jsx
+│   │       ├── Button.test.jsx
+│   │       └── index.js
+│   └── Pages
+│       ├── CounterPage
+│       │   ├── CounterPage.jsx
+│       │   ├── CounterPage.scss
+│       │   ├── CounterPage.stories.jsx
+│       │   ├── CounterPage.test.jsx
+│       │   └── index.js
+│       ├── HomePage
+│       │   ├── HomePage.jsx
+│       │   ├── HomePage.scss
+│       │   ├── HomePage.stories.jsx
+│       │   ├── HomePage.test.jsx
+│       │   └── index.js
+│       └── RepositoryPage
+│           ├── RepositoryList
+│           │   ├── RepositoryList.jsx
+│           │   ├── RepositoryList.scss
+│           │   ├── RepositoryList.stories.jsx
+│           │   ├── RepositoryList.test.jsx
+│           │   └── index.js
+│           ├── RepositoryPage.jsx
+│           ├── RepositoryPage.stories.jsx
+│           ├── RepositoryPage.test.jsx
+│           └── index.js
+├── state
+│   ├── apis
+│   │   └── github
+│   │       ├── index.js
+│   │       ├── mocks.js
+│   │       ├── requests.js
+│   │       └── transformers.js
+│   ├── middleware
+│   │   └── rest.js
+│   ├── modules
+│   │   ├── counter
+│   │   │   ├── actions.js
+│   │   │   ├── index.js
+│   │   │   ├── records.js
+│   │   │   ├── reducers.js
+│   │   │   ├── selectors.js
+│   │   │   ├── test.js
+│   │   │   ├── thunks.js
+│   │   │   └── types.js
+│   │   └── repositories
+│   │       ├── actions.js
+│   │       ├── index.js
+│   │       ├── records.js
+│   │       ├── reducers.js
+│   │       ├── selectors.js
+│   │       ├── test.js
+│   │       └── types.js
+│   ├── utils
+│   │   └── actions.js
+│   ├── history.js
+│   └── store.js
+├── styles
+│   ├── breakpoints.scss
+│   ├── colors.scss
+│   ├── globals.scss
+│   ├── index.scss
+│   └── mixins.scss
+├── index.html
+├── index.jsx
+└── setupTests.js
 ```
 
 ## How

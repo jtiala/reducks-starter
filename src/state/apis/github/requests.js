@@ -1,8 +1,8 @@
 import * as transformers from './transformers';
 
-export const API_URL = 'https://api.github.com';
+const API_URL = 'https://api.github.com';
 
-export const getRepositories = (mock = undefined) => ({
+export const getRepositories = () => ({
   meta: {
     rest: {
       url: `${API_URL}/repositories`,
@@ -10,7 +10,6 @@ export const getRepositories = (mock = undefined) => ({
         method: 'GET',
       },
       transformer: transformers.getRepositories,
-      mock,
     },
   },
 });

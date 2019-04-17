@@ -1,9 +1,9 @@
 import * as types from './types';
 import { getRepositories } from '../../apis/github/requests';
 
-export const fetchRepositories = (mock = undefined) => ({
+export const fetchRepositories = () => ({
   type: types.FETCH_REPOSITORIES,
-  ...getRepositories(mock),
+  ...getRepositories(),
 });
 
 export const clear = () => ({

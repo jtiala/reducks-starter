@@ -7,7 +7,7 @@ import RepositoryList from './RepositoryList';
 const props = {
   hasRepositories: true,
   isFetching: false,
-  repositories: transformers.getRepositories(mocks.getRepositoriesSuccess),
+  repositories: transformers.getRepositories(mocks.getRepositories),
 };
 
 storiesOf('Pages/Repositories/RepositoryList', module)
