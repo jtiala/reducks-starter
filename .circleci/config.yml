@@ -80,6 +80,7 @@ jobs:
       - GH_NAME: ${GH_NAME}
       - GH_EMAIL: ${GH_EMAIL}
     steps:
+      - checkout
       - attach_workspace:
           at: .
       - run:

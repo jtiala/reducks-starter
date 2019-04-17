@@ -224,8 +224,8 @@ While this project's main focus is to be my idea of a perfect boilerplate, I'm a
 
 This project is open source software licensed under the MIT license. For more information see [LICENSE][license].
 
-[build-status]: https://travis-ci.com/jtiala/reducks-starter
-[build-status-badge]: https://travis-ci.com/jtiala/reducks-starter.svg?branch=master
+[build-status]: https://circleci.com/gh/jtiala/reducks-starter/tree/master
+[build-status-badge]: https://circleci.com/gh/jtiala/reducks-starter/tree/master.svg?style=svg
 [dependencies-status]: https://david-dm.org/jtiala/reducks-starter
 [dependencies-status-badge]: https://img.shields.io/david/jtiala/reducks-starter.svg
 [devdependencies-status]: https://david-dm.org/jtiala/reducks-starter?type=dev
