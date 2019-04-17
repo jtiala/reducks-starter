@@ -22,23 +22,25 @@
     "url": "https://github.com/jtiala/reducks-starter"
   },
   "scripts": {
+    "analyze": "yarn build:stats && webpack-bundle-analyzer webpack-stats.json dist",
     "build": "NODE_ENV=production webpack --mode production",
-    "start": "NODE_ENV=development webpack-dev-server --watch --watch-content-base --mode development",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:report": "jest --reporters=default --reporters=jest-junit",
-    "test:coverage": "jest --coverage",
-    "test:ci": "jest --ci --reporters=default --reporters=jest-junit --coverage",
-    "lint": "yarn lint:js && yarn lint:styles && yarn lint:other",
-    "lint:fix": "yarn lint:js:fix && yarn lint:styles:fix",
-    "lint:js": "eslint src/**/*.{js,jsx}",
-    "lint:js:fix": "eslint src/**/*.{js,jsx} --fix",
-    "lint:styles": "stylelint src/**/*.{css,scss}",
-    "lint:styles:fix": "stylelint src/**/*.{css,scss} --fix",
-    "lint:other": "prettier --list-different '**/*.{md,json,yml,yaml}'",
+    "build:stats": "NODE_ENV=production webpack --mode production --profile --json > webpack-stats.json",
+    "deploy": "sh ./scripts/deploy-gh-pages.sh",
     "format": "prettier --write '**/*.{js,jsx,css,scss,html,md,json,yml,yaml}'",
+    "lint:fix": "yarn lint:js:fix && yarn lint:styles:fix",
+    "lint:js:fix": "eslint src/**/*.{js,jsx} --fix",
+    "lint:js": "eslint src/**/*.{js,jsx}",
+    "lint:other": "prettier --list-different '**/*.{md,json,yml,yaml}'",
+    "lint:styles:fix": "stylelint src/**/*.{css,scss} --fix",
+    "lint:styles": "stylelint src/**/*.{css,scss}",
+    "lint": "yarn lint:js && yarn lint:styles && yarn lint:other",
+    "start": "NODE_ENV=development webpack-dev-server --watch --watch-content-base --mode development",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "deploy": "sh ./scripts/deploy-gh-pages.sh"
+    "test:ci": "jest --ci --reporters=default --reporters=jest-junit --coverage",
+    "test:coverage": "jest --coverage",
+    "test:report": "jest --reporters=default --reporters=jest-junit",
+    "test:watch": "jest --watch",
+    "test": "jest"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.3",
@@ -101,6 +103,7 @@
     "sw-precache-webpack-plugin": "^0.11.5",
     "terser-webpack-plugin": "^1.2.3",
     "webpack": "^4.30.0",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1"
   }

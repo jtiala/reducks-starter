@@ -101,6 +101,7 @@ const webpackConfig = {
       navigateFallback: publicPath,
       dontCacheBustUrlsMatching: /\.\w{8}\./,
       staticFileGlobsIgnorePatterns: [/\.map$/],
+      logger: () => {}, // default logger breaks webpack-stats.json
     }),
   ],
 };

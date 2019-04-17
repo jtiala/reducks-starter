@@ -5,6 +5,7 @@ dist
 logs
 *.log
 npm-debug.log*
+webpack-stats.json
 
 # Dependency directories
 node_modules
