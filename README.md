@@ -1,6 +1,6 @@
 # 🦆 Reducks Starter
 
-[![Build Status][build-status-badge]][build-status]
+[![Actions Status][actions-status-badge]][actions-status]
 [![Dependencies Status][dependencies-status-badge]][dependencies-status]
 [![Dev Dependencies Status][devdependencies-status-badge]][devdependencies-status]
 [![PRs Welcome][prs-badge]][contributing]
@@ -42,6 +42,7 @@ Like stated before, this is boilerplate with the features and structure I like t
 - Bundling with [Webpack v4][webpack]
 - Formatting and linting with [Prettier][prettier], [ESLint][eslint] and [Stylelint][stylelint]
 - [Storybook][storybook], [Redux DevTools][redux-dev-tools] and [Webpack DevServer][webpack-dev-server] with hot module replacement (HMR) for pleasant developer experience
+- CI/CD configs for [GitHub Actions][github-actions], [CircleCI][circleci] and [Travis CI][travis]
 - **Examples for everything included!**
 
 ### Project structure
@@ -222,8 +223,8 @@ While this project's main focus is to be my idea of a perfect boilerplate, I'm a
 
 This project is open source software licensed under the MIT license. For more information see [LICENSE][license].
 
-[build-status]: https://circleci.com/gh/jtiala/reducks-starter/tree/master
-[build-status-badge]: https://circleci.com/gh/jtiala/reducks-starter/tree/master.svg?style=svg
+[actions-status]: https://github.com/jtiala/reducks-starter/actions
+[actions-status-badge]: https://github.com/jtiala/reducks-starter/workflows/CI/CD/badge.svg
 [dependencies-status]: https://david-dm.org/jtiala/reducks-starter
 [dependencies-status-badge]: https://img.shields.io/david/jtiala/reducks-starter.svg
 [devdependencies-status]: https://david-dm.org/jtiala/reducks-starter?type=dev
@@ -259,3 +260,6 @@ This project is open source software licensed under the MIT license. For more in
 [git]: https://git-scm.com/
 [node]: https://nodejs.org/
 [issues]: https://github.com/jtiala/reducks-starter/issues
+[github-actions]: https://github.com/features/actions
+[circleci]: https://circleci.com/
+[travis]: https://travis-ci.org/
