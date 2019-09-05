@@ -1,7 +1,10 @@
-name: CI
-on: [pull_request]
+name: CI/CD
+on:
+  push:
+    branches:
+      - master
 jobs:
-  ci:
+  ci-cd:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,5 +21,10 @@ jobs:
         env:
           CI: true
         run: npm run test:ci
-      - name: Build
-        run: npm run build
+      - name: Build and deploy
+        uses: JamesIves/github-pages-deploy-action@master
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
+          BUILD_SCRIPT: npm install && npm run build
