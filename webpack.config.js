@@ -4,7 +4,7 @@ const flexbugs = require('postcss-flexbugs-fixes');
 const postcssPresetEnv = require('postcss-preset-env');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -44,9 +44,11 @@ const webpackConfig = {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-              modules: true,
               importLoaders: 2,
-              localIdentName: '[name]__[local]_[hash:base64:5]',
+              modules: {
+                mode: 'local',
+                localIdentName: '[name]__[local]_[hash:base64:5]',
+              },
             },
           },
           {

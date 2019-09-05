@@ -12,20 +12,17 @@ jobs:
       - run:
           name: NPM version
           command: npm -v
-      - run:
-          name: Yarn version
-          command: yarn -v
       - restore_cache:
           name: Restore cached dependencies
-          key: dependency-cache-{{ checksum "yarn.lock" }}
+          key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
           name: Install dependencies
-          command: yarn install --frozen-lockfile
+          command: npm install
       - save_cache:
           name: Cache dependencies
-          key: dependency-cache-{{ checksum "yarn.lock" }}
+          key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
-            - ~/.cache/yarn
+            - ~/.cache/npm
       - persist_to_workspace:
           root: .
           paths:
@@ -41,7 +38,7 @@ jobs:
           at: .
       - run:
           name: Run build
-          command: yarn build
+          command: npm run build
       - persist_to_workspace:
           root: .
           paths:
@@ -55,7 +52,7 @@ jobs:
           at: .
       - run:
           name: Run tests
-          command: yarn test:ci
+          command: npm run test:ci
       - store_test_results:
           path: junit.xml
       - persist_to_workspace:
@@ -72,7 +69,7 @@ jobs:
           at: .
       - run:
           name: Run linters
-          command: yarn lint
+          command: npm run lint
   deploy:
     docker:
       - image: circleci/node:latest
@@ -85,7 +82,7 @@ jobs:
           at: .
       - run:
           name: Deploy to GitHub Pages
-          command: yarn deploy -m "Deploy from CircleCI"
+          command: npm run deploy -m "Deploy from CircleCI"
 
 workflows:
   version: 2

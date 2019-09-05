@@ -7,11 +7,11 @@ cache:
 env:
   - PUBLIC_PATH='/reducks-starter/'
 install:
-  - yarn install
+  - npm install
 script:
-  - yarn test
-  - yarn lint
-  - yarn build
+  - npm run test
+  - npm run lint
+  - npm run build
 deploy:
   provider: pages
   skip-cleanup: true

@@ -150,7 +150,6 @@ src
 
 - [Git][git]
 - [Node][node]
-- [Yarn][yarn]
 
 ### Usage
 
@@ -164,49 +163,49 @@ $ cd <my-project-name>
 Install dependencies
 
 ```bash
-$ yarn
+$ npm install
 ```
 
 Build for production
 
 ```bash
-$ yarn build
+$ npm run build
 ```
 
 Run development server
 
 ```bash
-$ yarn start
+$ npm run start
 ```
 
 Run tests
 
 ```bash
-$ yarn test
+$ npm run test
 ```
 
 Or run tests automatically every time a file changes
 
 ```bash
-$ yarn test:watch
+$ npm run test:watch
 ```
 
 Generate test coverage report
 
 ```bash
-$ yarn test:coverage
+$ npm run test:coverage
 ```
 
 Run linters. For more linting scripts, take a look at `package.json`.
 
 ```bash
-$ yarn lint
+$ npm run lint
 ```
 
 Build and start Storybook
 
 ```bash
-$ yarn storybook
+$ npm run storybook
 ```
 
 ## Changelog
@@ -259,5 +258,4 @@ This project is open source software licensed under the MIT license. For more in
 [styled-components]: https://www.styled-components.com/
 [git]: https://git-scm.com/
 [node]: https://nodejs.org/
-[yarn]: https://yarnpkg.com/
 [issues]: https://github.com/jtiala/reducks-starter/issues
