@@ -11,7 +11,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
-
 const isDev = process.env.NODE_ENV === 'development';
 const publicPath = process.env.PUBLIC_PATH || '/';
 
