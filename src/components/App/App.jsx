@@ -11,9 +11,15 @@ export const App = () => (
     <Header />
     <main>
       <Switch>
-        <Route exact path="/counter" component={ConnectedCounterPage} />
-        <Route exact path="/repositories" component={ConnectedRepositoryPage} />
-        <Route component={HomePage} />
+        <Route exact path="/counter">
+          <ConnectedCounterPage />
+        </Route>
+        <Route exact path="/repositories">
+          <ConnectedRepositoryPage />
+        </Route>
+        <Route>
+          <HomePage />
+        </Route>
       </Switch>
     </main>
   </div>
