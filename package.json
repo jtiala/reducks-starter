@@ -100,11 +100,11 @@
     "stylelint-config-idiomatic-order": "^7.0.3",
     "stylelint-config-prettier": "^5.2.0",
     "stylelint-prettier": "^1.1.1",
-    "sw-precache-webpack-plugin": "^0.11.5",
     "terser-webpack-plugin": "^1.4.1",
     "webpack": "^4.39.3",
     "webpack-bundle-analyzer": "^3.4.1",
     "webpack-cli": "^3.3.7",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "workbox-webpack-plugin": "^4.3.1"
   }
 }

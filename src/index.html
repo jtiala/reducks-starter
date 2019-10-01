@@ -40,9 +40,9 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans"
     />
     <script>
-      if ('serviceWorker' in window.navigator) {
+      if ('serviceWorker' in navigator) {
         window.addEventListener('load', () =>
-          window.navigator.serviceWorker.register(
+          navigator.serviceWorker.register(
             '<%= htmlWebpackPlugin.options.publicPath %>service-worker.js',
           ),
         );

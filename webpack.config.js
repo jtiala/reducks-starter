@@ -9,7 +9,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+
 
 const isDev = process.env.NODE_ENV === 'development';
 const publicPath = process.env.PUBLIC_PATH || '/';
@@ -97,13 +98,9 @@ const webpackConfig = {
       NODE_ENV: 'production',
       PUBLIC_PATH: '/',
     }),
-    new SWPrecacheWebpackPlugin({
+    new WorkboxWebpackPlugin.GenerateSW({
       cacheId: 'reducks-starter',
-      minify: true,
-      navigateFallback: publicPath,
-      dontCacheBustUrlsMatching: /\.\w{8}\./,
-      staticFileGlobsIgnorePatterns: [/\.map$/],
-      logger: () => {}, // default logger breaks webpack-stats.json
+      navigateFallback: '/index.html',
     }),
   ],
 };
