@@ -22,7 +22,7 @@
     "url": "https://github.com/jtiala/reducks-starter"
   },
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --watch --watch-content-base --mode development",
+    "start": "NODE_ENV=development webpack-dev-server --open --watch --watch-content-base --mode development",
     "build": "NODE_ENV=production webpack --mode production",
     "build:stats": "NODE_ENV=production webpack --mode production --profile --json > webpack-stats.json",
     "analyze": "npm run build:stats && webpack-bundle-analyzer webpack-stats.json dist",
