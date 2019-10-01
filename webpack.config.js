@@ -11,106 +11,112 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
-const isDev = process.env.NODE_ENV === 'development';
-const publicPath = process.env.PUBLIC_PATH || '/';
 
-const webpackConfig = {
-  entry: ['@babel/polyfill', './src/index.jsx'],
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath,
-    filename: '[name].[hash].js',
-  },
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
-      {
-        test: /\.(css|scss)$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: isDev,
-            },
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              importLoaders: 2,
-              modules: {
-                mode: 'local',
-                localIdentName: '[name]__[local]_[hash:base64:5]',
+const webpackConfig = env => {
+  const isDev = env.NODE_ENV === 'development';
+  const publicPath = env.PUBLIC_PATH || '/';
+
+  const config = {
+    entry: ['@babel/polyfill', './src/index.jsx'],
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      publicPath,
+      filename: '[name].[hash].js',
+    },
+    resolve: {
+      extensions: ['.js', '.jsx'],
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: ['babel-loader'],
+        },
+        {
+          test: /\.(css|scss)$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: isDev,
               },
             },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              plugins: () => [flexbugs, postcssPresetEnv()],
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+                importLoaders: 2,
+                modules: {
+                  mode: 'local',
+                  localIdentName: '[name]__[local]_[hash:base64:5]',
+                },
+              },
             },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true,
+                plugins: () => [flexbugs, postcssPresetEnv()],
+              },
             },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true,
+              },
+            },
+          ],
+        },
+      ],
+    },
+    optimization: {
+      minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()],
+      splitChunks: {
+        cacheGroups: {
+          commons: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendor',
+            chunks: 'all',
           },
-        ],
-      },
-    ],
-  },
-  optimization: {
-    minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()],
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          chunks: 'all',
         },
       },
     },
-  },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([{ from: 'public' }]),
-    new MiniCssExtractPlugin({
-      filename: isDev ? '[name].css' : '[name].[hash].css',
-      chunkFilename: isDev ? '[name].css' : '[name].[hash].css',
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: './index.html',
-      publicPath,
-    }),
-    new ScriptExtHtmlWebpackPlugin({ defaultAttribute: 'defer' }),
-    new webpack.EnvironmentPlugin({
-      NODE_ENV: 'production',
-      PUBLIC_PATH: '/',
-    }),
-    new WorkboxWebpackPlugin.GenerateSW({
-      cacheId: 'reducks-starter',
-      navigateFallback: '/index.html',
-    }),
-  ],
+    plugins: [
+      new CleanWebpackPlugin(),
+      new CopyWebpackPlugin([{ from: 'public' }]),
+      new MiniCssExtractPlugin({
+        filename: isDev ? '[name].css' : '[name].[hash].css',
+        chunkFilename: isDev ? '[name].css' : '[name].[hash].css',
+      }),
+      new HtmlWebpackPlugin({
+        template: './src/index.html',
+        filename: './index.html',
+        publicPath,
+      }),
+      new ScriptExtHtmlWebpackPlugin({ defaultAttribute: 'defer' }),
+      new webpack.EnvironmentPlugin({
+        NODE_ENV: 'production',
+        PUBLIC_PATH: '/',
+      }),
+      new WorkboxWebpackPlugin.GenerateSW({
+        cacheId: 'reducks-starter',
+        navigateFallback: '/index.html',
+      }),
+    ],
+  };
+
+  if (isDev) {
+    config.plugins.push(new webpack.HotModuleReplacementPlugin());
+    config.devServer = {
+      hot: true,
+      historyApiFallback: true,
+      contentBase: path.join(__dirname, 'public'),
+    };
+  }
+
+  return config;
 };
 
-if (isDev) {
-  webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
-  webpackConfig.devServer = {
-    hot: true,
-    historyApiFallback: true,
-    contentBase: path.join(__dirname, 'public'),
-  };
-}
 
 module.exports = webpackConfig;
