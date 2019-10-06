@@ -17,7 +17,7 @@ const webpackConfig = env => {
   const publicPath = env.PUBLIC_PATH || '/';
 
   const config = {
-    entry: ['@babel/polyfill', './src/index.jsx'],
+    entry: ['./src/index.jsx'],
     output: {
       path: path.resolve(__dirname, 'dist'),
       publicPath,
