@@ -43,9 +43,9 @@
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.6.0",
     "classnames": "^2.2.6",
     "connected-react-router": "^6.5.2",
+    "core-js": "^2.6.9",
     "history": "^4.10.1",
     "immutable": "^4.0.0-rc.12",
     "modern-normalize": "^0.5.0",
@@ -56,7 +56,8 @@
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
     "redux-immutable": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
