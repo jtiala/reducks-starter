@@ -66,7 +66,7 @@
     "@storybook/addon-actions": "^5.2.1",
     "@storybook/addon-links": "^5.2.1",
     "@storybook/addons": "^5.2.1",
-    "@storybook/react": "^5.2.1",
+    "@storybook/react": "^7.0.6",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
@@ -83,7 +83,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.15.0",
     "eslint-plugin-react-hooks": "^2.1.1",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "jest-junit": "^8.0.0",
@@ -104,7 +104,7 @@
     "terser-webpack-plugin": "^2.1.2",
     "webpack": "^4.41.0",
     "webpack-bundle-analyzer": "^3.5.2",
-    "webpack-cli": "^3.3.9",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.8.1",
     "workbox-webpack-plugin": "^4.3.1"
   }
