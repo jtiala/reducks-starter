@@ -1,11 +1,5 @@
 # 🦆 Reducks Starter
 
-[![Actions Status][actions-status-badge]][actions-status]
-[![Dependencies Status][dependencies-status-badge]][dependencies-status]
-[![Dev Dependencies Status][devdependencies-status-badge]][devdependencies-status]
-[![PRs Welcome][prs-badge]][contributing]
-[![License][license-badge]](license)
-
 > Reducks Starter is a highly opinionated React/Redux boilerplate based on the [re-ducks approach][re-ducks]. Live example [here][example].
 
 ## Table of Contents
@@ -223,16 +217,6 @@ While this project's main focus is to be my idea of a perfect boilerplate, I'm a
 
 This project is open source software licensed under the MIT license. For more information see [LICENSE][license].
 
-[actions-status]: https://github.com/jtiala/reducks-starter/actions
-[actions-status-badge]: https://github.com/jtiala/reducks-starter/workflows/CI/CD/badge.svg
-[dependencies-status]: https://david-dm.org/jtiala/reducks-starter
-[dependencies-status-badge]: https://img.shields.io/david/jtiala/reducks-starter.svg
-[devdependencies-status]: https://david-dm.org/jtiala/reducks-starter?type=dev
-[devdependencies-status-badge]: https://img.shields.io/david/dev/jtiala/reducks-starter.svg
-[contributing]: #contributing
-[prs-badge]: https://img.shields.io/badge/prs-welcome-blue.svg
-[license]: https://github.com/jtiala/reducks-starter/blob/master/LICENSE
-[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [example]: https://jtiala.github.io/reducks-starter/
 [ducks]: https://github.com/erikras/ducks-modular-redux
 [erikras]: https://github.com/erikras
