@@ -217,6 +217,7 @@ While this project's main focus is to be my idea of a perfect boilerplate, I'm a
 
 This project is open source software licensed under the MIT license. For more information see [LICENSE][license].
 
+[license]: https://github.com/jtiala/reducks-starter/blob/master/LICENSE
 [example]: https://jtiala.github.io/reducks-starter/
 [ducks]: https://github.com/erikras/ducks-modular-redux
 [erikras]: https://github.com/erikras
